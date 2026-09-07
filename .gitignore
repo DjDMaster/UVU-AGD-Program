@@ -1,16 +1,3 @@
-# Maya Binary Files and Arnold tx files
-*.nb
-*.tx
-
-git lfs install
-git lfs track "*.psd" "*.png" "*.jpg" "*.jpeg" "*.tga" "*.tif" "*.tiff" "*.exr" "*.hdr" "*.bmp" "*.gif"
-git lfs track "*.wav" "*.aif" "*.aiff" "*.mp3" "*.ogg" "*.flac"
-git lfs track "*.mp4" "*.mov" "*.avi" "*.webm"
-git lfs track "*.fbx" "*.mb"
-git add .gitattributes
-git commit -m "chore: configure Git LFS for binary assets"
-
-
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
