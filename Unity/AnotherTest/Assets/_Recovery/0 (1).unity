@@ -484,14 +484,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloorEngine
   chosenMapSize: 10
   floorTiles: []
-  gridSize: 5
+  gridSize: 3
   temp: {fileID: 0}
   xPos: 0
   zPos: 0
   adjustedXPos: 0
   adjustedZPos: 0
   tempVector: {x: 0, y: 0, z: 0}
-  defaultTile: {fileID: 2079681249286195726, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+  defaultTile: {fileID: 2695644445569372330, guid: 5856303bdb5595744973576a9d80150c, type: 3}
 --- !u!4 &663690273
 Transform:
   m_ObjectHideFlags: 0
@@ -1089,7 +1089,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7458226595284279537
+--- !u!1001 &8575758412870283244
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1097,54 +1097,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2079681249286195726, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 2695644445569372330, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_Name
       value: Tile
       objectReference: {fileID: 0}
-    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 4337496056551974347, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 4337496056551974347, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 4337496056551974347, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 4337496056551974347, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 4337496056551974347, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 4337496056551974347, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 4337496056551974347, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 4337496056551974347, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 4337496056551974347, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+    - target: {fileID: 4337496056551974347, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6305811814236519202, guid: 5856303bdb5595744973576a9d80150c, type: 3}
-      propertyPath: defaultTile
-      value: 
-      objectReference: {fileID: 2695644445569372330, guid: 5856303bdb5595744973576a9d80150c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1158,5 +1154,5 @@ SceneRoots:
   - {fileID: 1338214729}
   - {fileID: 1971591361}
   - {fileID: 109861336}
+  - {fileID: 8575758412870283244}
   - {fileID: 663690273}
-  - {fileID: 7458226595284279537}

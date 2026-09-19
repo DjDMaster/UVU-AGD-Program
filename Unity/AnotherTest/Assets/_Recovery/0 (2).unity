@@ -482,10 +482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da04d6791345e8148a382206bd7f8d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FloorEngine
-  chosenMapSize: 10
+  chosenMapSize: 30
   floorTiles: []
-  gridSize: 5
-  temp: {fileID: 0}
+  gridSize: 1
+  temp: {fileID: 2070758996}
   xPos: 0
   zPos: 0
   adjustedXPos: 0
@@ -1089,6 +1089,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2070758996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2079681249286195726, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+  m_PrefabInstance: {fileID: 7458226595284279537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7458226595284279537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1100,6 +1105,18 @@ PrefabInstance:
     - target: {fileID: 2079681249286195726, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_Name
       value: Tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1141,10 +1158,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6305811814236519202, guid: 5856303bdb5595744973576a9d80150c, type: 3}
-      propertyPath: defaultTile
-      value: 
-      objectReference: {fileID: 2695644445569372330, guid: 5856303bdb5595744973576a9d80150c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
