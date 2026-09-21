@@ -15,7 +15,7 @@ public class FloorEngine : MonoBehaviour
     private List<int> plusOrMinusThreeList = new List<int>{-3,3};
 
     //Grid size for even spawning
-    [SerializeField] private int gridSize = 5;
+    [SerializeField] private int gridSize = 3;
 
     //Hold temp last spawned tile
     [SerializeField] private GameObject temp;
