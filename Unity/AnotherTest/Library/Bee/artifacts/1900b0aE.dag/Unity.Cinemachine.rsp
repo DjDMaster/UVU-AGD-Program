@@ -136,12 +136,14 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER
 -define:TEXTCORE_FONT_ENGINE_1_6_OR_NEWER
 -define:CINEMACHINE_PHYSICS_2D
 -define:CINEMACHINE_PHYSICS
+-define:CINEMACHINE_UNITY_INPUTSYSTEM
 -define:CINEMACHINE_UNITY_ANIMATION
 -define:CINEMACHINE_UIELEMENTS
 -define:CINEMACHINE_SPLINES_2_4
@@ -427,6 +429,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/6000.5.10f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XmlSerializer.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/6000.5.10f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/6000.5.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Mathematics.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Splines.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.5.10f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll"

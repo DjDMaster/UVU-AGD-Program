@@ -9,6 +9,16 @@
     "C:\\Program Files\\Unity\\Hub\\Editor\\6000.5.10f1\\Editor\\Data\\Resources\\PackageManager\\BuiltInPackages\\BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
+    "com.unity.2d.sprite@1.0.0": {
+      "name": "com.unity.2d.sprite",
+      "displayName": "2D Sprite",
+      "resolvedPath": "C:\\Users\\djdma\\Github\\AGD-Program\\UVU-AGD-Program\\Unity\\AnotherTest\\Library\\PackageCache\\com.unity.2d.sprite@053a968eab56",
+      "fingerprint": "053a968eab56ad54f8322d007733b1e173abaae1",
+      "editorCompatibility": "2019.2.0a1",
+      "version": "1.0.0",
+      "source": "builtin",
+      "testable": false
+    },
     "com.unity.cinemachine@3.1.7": {
       "name": "com.unity.cinemachine",
       "displayName": "Cinemachine",
@@ -16,6 +26,16 @@
       "fingerprint": "f3f96bcb59af572d4d28704d53f6388471d7dd21",
       "editorCompatibility": "2022.3.0a1",
       "version": "3.1.7",
+      "source": "registry",
+      "testable": false
+    },
+    "com.unity.inputsystem@1.20.0": {
+      "name": "com.unity.inputsystem",
+      "displayName": "Input System",
+      "resolvedPath": "C:\\Users\\djdma\\Github\\AGD-Program\\UVU-AGD-Program\\Unity\\AnotherTest\\Library\\PackageCache\\com.unity.inputsystem@7a4e1a2a8194",
+      "fingerprint": "7a4e1a2a81941121ffc0721a14009b46299dada1",
+      "editorCompatibility": "6000.0.0a1",
+      "version": "1.20.0",
       "source": "registry",
       "testable": false
     },
