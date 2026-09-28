@@ -448,7 +448,7 @@
 "Assets/Scripts/Unused/MoveCamera.cs"
 "Assets/Scripts/Unused/PlayerCam.cs"
 "Assets/Scripts/Unused/ThirdPersonCam.cs"
-"Assets/Scripts/WallOverlap.cs"
+"Assets/Scripts/Unused/WallOverlap.cs"
 -langversion:9.0
 /deterministic
 /optimize+

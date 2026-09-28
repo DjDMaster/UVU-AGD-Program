@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Room1
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   cardImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  cardText: 
-  effectType: 0
+  cardText: fdsfdsf
+  roomShape: 0
+  roomSize: 1
+  roomType: 1
   effectValue: 0
   isUnique: 0
   unlockLevel: 0
