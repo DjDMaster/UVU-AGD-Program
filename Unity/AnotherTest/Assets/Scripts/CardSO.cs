@@ -1,4 +1,3 @@
-using System.IO.Enumeration;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
@@ -20,7 +19,7 @@ public class CardSO : ScriptableObject
 
 public enum roomShape
 {
-    Square, Cross, Rectangle, 
+    Square, Cross, Rectangle, Corner
 
 }
 

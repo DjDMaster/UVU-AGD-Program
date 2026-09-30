@@ -49,6 +49,16 @@
       "source": "builtin",
       "testable": false
     },
+    "com.unity.ugui@2.5.0": {
+      "name": "com.unity.ugui",
+      "displayName": "uGUI",
+      "resolvedPath": "C:\\Users\\djdma\\Github\\AGD-Program\\UVU-AGD-Program\\Unity\\AnotherTest\\Library\\PackageCache\\com.unity.ugui@1c4864518158",
+      "fingerprint": "1c4864518158e22db1a992bb876b0026299b3038",
+      "editorCompatibility": "6000.5.0a1",
+      "version": "2.5.0",
+      "source": "builtin",
+      "testable": false
+    },
     "com.unity.modules.accessibility@1.0.0": {
       "name": "com.unity.modules.accessibility",
       "displayName": "Accessibility",

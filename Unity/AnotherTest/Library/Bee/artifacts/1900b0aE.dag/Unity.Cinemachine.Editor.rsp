@@ -140,6 +140,7 @@
 -define:TEXTCORE_FONT_ENGINE_1_6_OR_NEWER
 -define:CINEMACHINE_PHYSICS_2D
 -define:CINEMACHINE_PHYSICS
+-define:CINEMACHINE_UGUI
 -define:CINEMACHINE_UNITY_ANIMATION
 -define:CINEMACHINE_UNITY_INPUTSYSTEM
 -define:CINEMACHINE_3_OR_NEWER
@@ -436,6 +437,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Mathematics.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Splines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Splines.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.5.10f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.5.10f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.5.10f1/Editor/Data/Tools/BuildPipeline/Unity.Analyzers.Common/Unity.Analyzers.Common.dll"
