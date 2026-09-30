@@ -392,7 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6316498387943194982}
   - component: {fileID: 3332767170238800616}
-  - component: {fileID: 4560194511949741228}
+  - component: {fileID: 7566653616382087703}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -477,7 +477,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &4560194511949741228
+--- !u!114 &7566653616382087703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -486,8 +486,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7931317907490140333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 602761972354a414bb786379750b9f26, type: 3}
+  m_Script: {fileID: 11500000, guid: 13c14bae11170874489c3c47aaac4e72, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Card
-  cardImageRenderer: {fileID: 5163407244411897313}
-  cardTextRenderer: {fileID: 2360782348038941347}
+  m_EditorClassIdentifier: Assembly-CSharp::CardUI
+  cardImage: {fileID: 0}
+  cardText: {fileID: 0}
