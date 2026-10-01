@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: GameStoneTile.ma
-//Last modified: Mon, Sep 21, 2026 02:36:28 PM
+//Last modified: Wed, Sep 30, 2026 11:03:25 PM
 //Codeset: 1252
 file -rdi 1 -ns "GameTiles" -rfn "GameTilesRN" -op "v=0;" -typ "mayaAscii" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Maya/Maya//scenes/GameTiles.ma";
 file -rdi 1 -ns "GameTiles1" -rfn "GameTilesRN1" -typ "mayaAscii" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Maya/Maya//scenes/GameTiles.ma";
@@ -96,25 +96,26 @@ file -r -ns "GameSpikes30" -dr 1 -rfn "GameSpikesRN30" -typ "mayaAscii" "C:/User
 file -r -ns "GameSpikes31" -dr 1 -rfn "GameSpikesRN31" -typ "mayaAscii" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Maya/Maya//scenes/GameSpikes.ma";
 file -r -ns "GameSpikes32" -dr 1 -rfn "GameSpikesRN32" -typ "mayaAscii" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Maya/Maya//scenes/GameSpikes.ma";
 requires maya "2026";
-requires "mtoa" "5.5.4.2";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
+		 "mtoa" "5.5.4.2";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "955241E6-4F81-5FAC-566F-F4B9304AB7C7";
+fileInfo "UUID" "3A8FD5A6-41CA-EF9A-BF10-36B7A411096C";
 createNode transform -s -n "persp";
 	rename -uid "A527AB85-4087-CA03-3170-FFBD70A818FC";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 3.9292064371294959 6.0785863792953201 -6.0221670162748167 ;
-	setAttr ".r" -type "double3" -41.999999996792205 490.39999999999299 0 ;
+	setAttr ".t" -type "double3" 3.1516220772039474 5.1592103013597601 -5.3603908542151704 ;
+	setAttr ".r" -type "double3" -41.999999996792212 490.39999999999299 0 ;
 	setAttr ".rpt" -type "double3" -1.3398962004352858e-16 7.2129196366552421e-18 -1.5403541751874419e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "5F29D92D-453F-7F5E-852B-A4BC4523758C";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 6.5128554513267893;
+	setAttr ".coi" 5.1388694622601907;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -4787,20 +4788,20 @@ createNode transform -n "SpikeGroup4" -p "DungeonFloorOopsAllSpikes";
 	setAttr ".rp" -type "double3" -11.000000579677845 -0.20914327669858723 2.1637105941772461 ;
 	setAttr ".sp" -type "double3" -11.000000579677845 -0.20914327669858723 2.1637105941772461 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "0664E9DA-4173-DAAC-80EB-E8A494CA65B0";
+	rename -uid "2A547512-4391-626B-8EF3-43A40EBBFDC0";
 	setAttr -s 143 ".lnk";
 	setAttr -s 143 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "A3518A1E-438F-772E-861D-BCA2FF9228DB";
+	rename -uid "9EA4F51B-462C-0BCB-428C-538B475EF852";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "91C332CC-4F00-28B9-3B82-5D85084E4E28";
+	rename -uid "34445588-412F-95EE-46A7-3D97031A6FCC";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "EFF649BC-405B-C022-4C30-B4828F6C36CB";
+	rename -uid "B617E69A-48A5-646C-4555-AF9E4023910B";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "17217FD4-4A1A-4DCB-67A3-528449A4559E";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "020C71F2-4F20-90D3-6F6B-EE80A52CAA43";
+	rename -uid "F3421E37-4D4A-BBB3-1F6C-3CBB947A4AB4";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "53F04C5F-4C3A-9EFF-9AE9-B9A9F9AD7B22";
 	setAttr ".g" yes;
@@ -4820,7 +4821,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
 		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1550\n            -height 1159\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1158\n            -height 1144\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n"
@@ -4842,10 +4843,12 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
 		+ "\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"motionMakerEditorPanel\" (localizedPanelLabel(\"MotionMaker Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"MotionMaker Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n"
-		+ "        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1550\\n    -height 1159\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1550\\n    -height 1159\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"motionMakerEditorPanel\" (localizedPanelLabel(\"MotionMaker Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"MotionMaker Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n"
+		+ "            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
+		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1158\\n    -height 1144\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1158\\n    -height 1144\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -5765,13 +5768,13 @@ createNode reference -n "GameSpikesRN";
 		"pnts[80]" " -type \"float3\" 0 0 0"
 		3 "GameSpikes:polyTweakUV16.output" "|GameSpikes:SpikeTrapBase|GameSpikes:SpikeBase|GameSpikes:SpikeBaseShape.inMesh" 
 		""
-		3 "GameSpikes:polyTweakUV15.output" "|GameSpikes:SpikeTrapBase|GameSpikes:Spikes|GameSpikes:Spike4|GameSpikes:SpikeShape4.inMesh" 
-		""
-		3 "GameSpikes:polyTweakUV12.output" "|GameSpikes:SpikeTrapBase|GameSpikes:Spikes|GameSpikes:Spike1|GameSpikes:SpikeShape1.inMesh" 
-		""
 		3 "GameSpikes:polyTweakUV14.output" "|GameSpikes:SpikeTrapBase|GameSpikes:Spikes|GameSpikes:Spike3|GameSpikes:SpikeShape3.inMesh" 
 		""
 		3 "GameSpikes:polyTweakUV13.output" "|GameSpikes:SpikeTrapBase|GameSpikes:Spikes|GameSpikes:Spike2|GameSpikes:SpikeShape2.inMesh" 
+		""
+		3 "GameSpikes:polyTweakUV15.output" "|GameSpikes:SpikeTrapBase|GameSpikes:Spikes|GameSpikes:Spike4|GameSpikes:SpikeShape4.inMesh" 
+		""
+		3 "GameSpikes:polyTweakUV12.output" "|GameSpikes:SpikeTrapBase|GameSpikes:Spikes|GameSpikes:Spike1|GameSpikes:SpikeShape1.inMesh" 
 		""
 		5 4 "GameSpikesRN" "|GameSpikes:SpikeTrapBase|GameSpikes:SpikeBase|GameSpikes:SpikeBaseShape.inMesh" 
 		"GameSpikesRN.placeHolderList[1]" ""
@@ -6289,15 +6292,15 @@ createNode reference -n "GameSpikesRN5";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes5:SpikeTrapBase|GameSpikes5:Spikes|GameSpikes5:Spike4|GameSpikes5:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes5:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes5:SpikeTrapBase|GameSpikes5:Spikes|GameSpikes5:Spike3|GameSpikes5:SpikeShape3.inMesh" 
-		""
-		3 "GameSpikes5:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes5:SpikeTrapBase|GameSpikes5:Spikes|GameSpikes5:Spike4|GameSpikes5:SpikeShape4.inMesh" 
-		""
 		3 "GameSpikes5:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes5:SpikeTrapBase|GameSpikes5:SpikeBase|GameSpikes5:SpikeBaseShape.inMesh" 
 		""
 		3 "GameSpikes5:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes5:SpikeTrapBase|GameSpikes5:Spikes|GameSpikes5:Spike2|GameSpikes5:SpikeShape2.inMesh" 
 		""
+		3 "GameSpikes5:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes5:SpikeTrapBase|GameSpikes5:Spikes|GameSpikes5:Spike4|GameSpikes5:SpikeShape4.inMesh" 
+		""
 		3 "GameSpikes5:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes5:SpikeTrapBase|GameSpikes5:Spikes|GameSpikes5:Spike1|GameSpikes5:SpikeShape1.inMesh" 
+		""
+		3 "GameSpikes5:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes5:SpikeTrapBase|GameSpikes5:Spikes|GameSpikes5:Spike3|GameSpikes5:SpikeShape3.inMesh" 
 		""
 		5 4 "GameSpikesRN5" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes5:SpikeTrapBase|GameSpikes5:SpikeBase|GameSpikes5:SpikeBaseShape.inMesh" 
 		"GameSpikesRN5.placeHolderList[1]" ""
@@ -6547,15 +6550,15 @@ createNode reference -n "GameSpikesRN6";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:Spikes|GameSpikes6:Spike4|GameSpikes6:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes6:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:Spikes|GameSpikes6:Spike1|GameSpikes6:SpikeShape1.inMesh" 
+		3 "GameSpikes6:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:Spikes|GameSpikes6:Spike3|GameSpikes6:SpikeShape3.inMesh" 
 		""
-		3 "GameSpikes6:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:Spikes|GameSpikes6:Spike2|GameSpikes6:SpikeShape2.inMesh" 
+		3 "GameSpikes6:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:Spikes|GameSpikes6:Spike1|GameSpikes6:SpikeShape1.inMesh" 
 		""
 		3 "GameSpikes6:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:SpikeBase|GameSpikes6:SpikeBaseShape.inMesh" 
 		""
-		3 "GameSpikes6:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:Spikes|GameSpikes6:Spike4|GameSpikes6:SpikeShape4.inMesh" 
+		3 "GameSpikes6:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:Spikes|GameSpikes6:Spike2|GameSpikes6:SpikeShape2.inMesh" 
 		""
-		3 "GameSpikes6:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:Spikes|GameSpikes6:Spike3|GameSpikes6:SpikeShape3.inMesh" 
+		3 "GameSpikes6:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:Spikes|GameSpikes6:Spike4|GameSpikes6:SpikeShape4.inMesh" 
 		""
 		5 4 "GameSpikesRN6" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes6:SpikeTrapBase|GameSpikes6:SpikeBase|GameSpikes6:SpikeBaseShape.inMesh" 
 		"GameSpikesRN6.placeHolderList[1]" ""
@@ -6805,15 +6808,15 @@ createNode reference -n "GameSpikesRN7";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes7:SpikeTrapBase|GameSpikes7:Spikes|GameSpikes7:Spike4|GameSpikes7:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes7:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes7:SpikeTrapBase|GameSpikes7:Spikes|GameSpikes7:Spike4|GameSpikes7:SpikeShape4.inMesh" 
+		3 "GameSpikes7:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes7:SpikeTrapBase|GameSpikes7:Spikes|GameSpikes7:Spike3|GameSpikes7:SpikeShape3.inMesh" 
 		""
 		3 "GameSpikes7:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes7:SpikeTrapBase|GameSpikes7:Spikes|GameSpikes7:Spike1|GameSpikes7:SpikeShape1.inMesh" 
 		""
-		3 "GameSpikes7:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes7:SpikeTrapBase|GameSpikes7:Spikes|GameSpikes7:Spike2|GameSpikes7:SpikeShape2.inMesh" 
-		""
 		3 "GameSpikes7:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes7:SpikeTrapBase|GameSpikes7:SpikeBase|GameSpikes7:SpikeBaseShape.inMesh" 
 		""
-		3 "GameSpikes7:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes7:SpikeTrapBase|GameSpikes7:Spikes|GameSpikes7:Spike3|GameSpikes7:SpikeShape3.inMesh" 
+		3 "GameSpikes7:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes7:SpikeTrapBase|GameSpikes7:Spikes|GameSpikes7:Spike4|GameSpikes7:SpikeShape4.inMesh" 
+		""
+		3 "GameSpikes7:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes7:SpikeTrapBase|GameSpikes7:Spikes|GameSpikes7:Spike2|GameSpikes7:SpikeShape2.inMesh" 
 		""
 		5 4 "GameSpikesRN7" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes7:SpikeTrapBase|GameSpikes7:SpikeBase|GameSpikes7:SpikeBaseShape.inMesh" 
 		"GameSpikesRN7.placeHolderList[1]" ""
@@ -7063,15 +7066,15 @@ createNode reference -n "GameSpikesRN8";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes8:SpikeTrapBase|GameSpikes8:Spikes|GameSpikes8:Spike4|GameSpikes8:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes8:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes8:SpikeTrapBase|GameSpikes8:Spikes|GameSpikes8:Spike3|GameSpikes8:SpikeShape3.inMesh" 
-		""
 		3 "GameSpikes8:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes8:SpikeTrapBase|GameSpikes8:SpikeBase|GameSpikes8:SpikeBaseShape.inMesh" 
-		""
-		3 "GameSpikes8:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes8:SpikeTrapBase|GameSpikes8:Spikes|GameSpikes8:Spike4|GameSpikes8:SpikeShape4.inMesh" 
 		""
 		3 "GameSpikes8:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes8:SpikeTrapBase|GameSpikes8:Spikes|GameSpikes8:Spike2|GameSpikes8:SpikeShape2.inMesh" 
 		""
+		3 "GameSpikes8:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes8:SpikeTrapBase|GameSpikes8:Spikes|GameSpikes8:Spike4|GameSpikes8:SpikeShape4.inMesh" 
+		""
 		3 "GameSpikes8:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes8:SpikeTrapBase|GameSpikes8:Spikes|GameSpikes8:Spike1|GameSpikes8:SpikeShape1.inMesh" 
+		""
+		3 "GameSpikes8:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes8:SpikeTrapBase|GameSpikes8:Spikes|GameSpikes8:Spike3|GameSpikes8:SpikeShape3.inMesh" 
 		""
 		5 4 "GameSpikesRN8" "|DungeonFloorOopsAllSpikes|SpikeGroup1|GameSpikes8:SpikeTrapBase|GameSpikes8:SpikeBase|GameSpikes8:SpikeBaseShape.inMesh" 
 		"GameSpikesRN8.placeHolderList[1]" ""
@@ -7321,15 +7324,15 @@ createNode reference -n "GameSpikesRN9";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes9:SpikeTrapBase|GameSpikes9:Spikes|GameSpikes9:Spike4|GameSpikes9:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes9:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes9:SpikeTrapBase|GameSpikes9:Spikes|GameSpikes9:Spike2|GameSpikes9:SpikeShape2.inMesh" 
+		3 "GameSpikes9:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes9:SpikeTrapBase|GameSpikes9:Spikes|GameSpikes9:Spike4|GameSpikes9:SpikeShape4.inMesh" 
 		""
 		3 "GameSpikes9:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes9:SpikeTrapBase|GameSpikes9:Spikes|GameSpikes9:Spike3|GameSpikes9:SpikeShape3.inMesh" 
 		""
-		3 "GameSpikes9:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes9:SpikeTrapBase|GameSpikes9:Spikes|GameSpikes9:Spike4|GameSpikes9:SpikeShape4.inMesh" 
+		3 "GameSpikes9:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes9:SpikeTrapBase|GameSpikes9:SpikeBase|GameSpikes9:SpikeBaseShape.inMesh" 
 		""
 		3 "GameSpikes9:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes9:SpikeTrapBase|GameSpikes9:Spikes|GameSpikes9:Spike1|GameSpikes9:SpikeShape1.inMesh" 
 		""
-		3 "GameSpikes9:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes9:SpikeTrapBase|GameSpikes9:SpikeBase|GameSpikes9:SpikeBaseShape.inMesh" 
+		3 "GameSpikes9:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes9:SpikeTrapBase|GameSpikes9:Spikes|GameSpikes9:Spike2|GameSpikes9:SpikeShape2.inMesh" 
 		""
 		5 4 "GameSpikesRN9" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes9:SpikeTrapBase|GameSpikes9:SpikeBase|GameSpikes9:SpikeBaseShape.inMesh" 
 		"GameSpikesRN9.placeHolderList[1]" ""
@@ -7579,15 +7582,15 @@ createNode reference -n "GameSpikesRN10";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes10:SpikeTrapBase|GameSpikes10:Spikes|GameSpikes10:Spike4|GameSpikes10:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes10:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes10:SpikeTrapBase|GameSpikes10:Spikes|GameSpikes10:Spike1|GameSpikes10:SpikeShape1.inMesh" 
-		""
 		3 "GameSpikes10:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes10:SpikeTrapBase|GameSpikes10:Spikes|GameSpikes10:Spike4|GameSpikes10:SpikeShape4.inMesh" 
 		""
 		3 "GameSpikes10:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes10:SpikeTrapBase|GameSpikes10:SpikeBase|GameSpikes10:SpikeBaseShape.inMesh" 
 		""
+		3 "GameSpikes10:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes10:SpikeTrapBase|GameSpikes10:Spikes|GameSpikes10:Spike3|GameSpikes10:SpikeShape3.inMesh" 
+		""
 		3 "GameSpikes10:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes10:SpikeTrapBase|GameSpikes10:Spikes|GameSpikes10:Spike2|GameSpikes10:SpikeShape2.inMesh" 
 		""
-		3 "GameSpikes10:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes10:SpikeTrapBase|GameSpikes10:Spikes|GameSpikes10:Spike3|GameSpikes10:SpikeShape3.inMesh" 
+		3 "GameSpikes10:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes10:SpikeTrapBase|GameSpikes10:Spikes|GameSpikes10:Spike1|GameSpikes10:SpikeShape1.inMesh" 
 		""
 		5 4 "GameSpikesRN10" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes10:SpikeTrapBase|GameSpikes10:SpikeBase|GameSpikes10:SpikeBaseShape.inMesh" 
 		"GameSpikesRN10.placeHolderList[1]" ""
@@ -7837,13 +7840,13 @@ createNode reference -n "GameSpikesRN11";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes11:SpikeTrapBase|GameSpikes11:Spikes|GameSpikes11:Spike4|GameSpikes11:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes11:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes11:SpikeTrapBase|GameSpikes11:SpikeBase|GameSpikes11:SpikeBaseShape.inMesh" 
-		""
 		3 "GameSpikes11:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes11:SpikeTrapBase|GameSpikes11:Spikes|GameSpikes11:Spike4|GameSpikes11:SpikeShape4.inMesh" 
 		""
-		3 "GameSpikes11:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes11:SpikeTrapBase|GameSpikes11:Spikes|GameSpikes11:Spike1|GameSpikes11:SpikeShape1.inMesh" 
-		""
 		3 "GameSpikes11:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes11:SpikeTrapBase|GameSpikes11:Spikes|GameSpikes11:Spike3|GameSpikes11:SpikeShape3.inMesh" 
+		""
+		3 "GameSpikes11:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes11:SpikeTrapBase|GameSpikes11:SpikeBase|GameSpikes11:SpikeBaseShape.inMesh" 
+		""
+		3 "GameSpikes11:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes11:SpikeTrapBase|GameSpikes11:Spikes|GameSpikes11:Spike1|GameSpikes11:SpikeShape1.inMesh" 
 		""
 		3 "GameSpikes11:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes11:SpikeTrapBase|GameSpikes11:Spikes|GameSpikes11:Spike2|GameSpikes11:SpikeShape2.inMesh" 
 		""
@@ -8095,15 +8098,15 @@ createNode reference -n "GameSpikesRN12";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes12:SpikeTrapBase|GameSpikes12:Spikes|GameSpikes12:Spike4|GameSpikes12:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes12:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes12:SpikeTrapBase|GameSpikes12:Spikes|GameSpikes12:Spike2|GameSpikes12:SpikeShape2.inMesh" 
-		""
 		3 "GameSpikes12:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes12:SpikeTrapBase|GameSpikes12:SpikeBase|GameSpikes12:SpikeBaseShape.inMesh" 
 		""
 		3 "GameSpikes12:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes12:SpikeTrapBase|GameSpikes12:Spikes|GameSpikes12:Spike4|GameSpikes12:SpikeShape4.inMesh" 
 		""
-		3 "GameSpikes12:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes12:SpikeTrapBase|GameSpikes12:Spikes|GameSpikes12:Spike1|GameSpikes12:SpikeShape1.inMesh" 
-		""
 		3 "GameSpikes12:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes12:SpikeTrapBase|GameSpikes12:Spikes|GameSpikes12:Spike3|GameSpikes12:SpikeShape3.inMesh" 
+		""
+		3 "GameSpikes12:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes12:SpikeTrapBase|GameSpikes12:Spikes|GameSpikes12:Spike2|GameSpikes12:SpikeShape2.inMesh" 
+		""
+		3 "GameSpikes12:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes12:SpikeTrapBase|GameSpikes12:Spikes|GameSpikes12:Spike1|GameSpikes12:SpikeShape1.inMesh" 
 		""
 		5 4 "GameSpikesRN12" "|DungeonFloorOopsAllSpikes|SpikeGroup2|GameSpikes12:SpikeTrapBase|GameSpikes12:SpikeBase|GameSpikes12:SpikeBaseShape.inMesh" 
 		"GameSpikesRN12.placeHolderList[1]" ""
@@ -8353,15 +8356,15 @@ createNode reference -n "GameSpikesRN13";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes13:SpikeTrapBase|GameSpikes13:Spikes|GameSpikes13:Spike4|GameSpikes13:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
+		3 "GameSpikes13:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes13:SpikeTrapBase|GameSpikes13:Spikes|GameSpikes13:Spike1|GameSpikes13:SpikeShape1.inMesh" 
+		""
 		3 "GameSpikes13:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes13:SpikeTrapBase|GameSpikes13:Spikes|GameSpikes13:Spike2|GameSpikes13:SpikeShape2.inMesh" 
 		""
-		3 "GameSpikes13:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes13:SpikeTrapBase|GameSpikes13:Spikes|GameSpikes13:Spike4|GameSpikes13:SpikeShape4.inMesh" 
-		""
-		3 "GameSpikes13:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes13:SpikeTrapBase|GameSpikes13:Spikes|GameSpikes13:Spike1|GameSpikes13:SpikeShape1.inMesh" 
+		3 "GameSpikes13:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes13:SpikeTrapBase|GameSpikes13:Spikes|GameSpikes13:Spike3|GameSpikes13:SpikeShape3.inMesh" 
 		""
 		3 "GameSpikes13:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes13:SpikeTrapBase|GameSpikes13:SpikeBase|GameSpikes13:SpikeBaseShape.inMesh" 
 		""
-		3 "GameSpikes13:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes13:SpikeTrapBase|GameSpikes13:Spikes|GameSpikes13:Spike3|GameSpikes13:SpikeShape3.inMesh" 
+		3 "GameSpikes13:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes13:SpikeTrapBase|GameSpikes13:Spikes|GameSpikes13:Spike4|GameSpikes13:SpikeShape4.inMesh" 
 		""
 		5 4 "GameSpikesRN13" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes13:SpikeTrapBase|GameSpikes13:SpikeBase|GameSpikes13:SpikeBaseShape.inMesh" 
 		"GameSpikesRN13.placeHolderList[1]" ""
@@ -8611,15 +8614,15 @@ createNode reference -n "GameSpikesRN14";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes14:SpikeTrapBase|GameSpikes14:Spikes|GameSpikes14:Spike4|GameSpikes14:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
+		3 "GameSpikes14:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes14:SpikeTrapBase|GameSpikes14:Spikes|GameSpikes14:Spike2|GameSpikes14:SpikeShape2.inMesh" 
+		""
 		3 "GameSpikes14:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes14:SpikeTrapBase|GameSpikes14:Spikes|GameSpikes14:Spike4|GameSpikes14:SpikeShape4.inMesh" 
-		""
-		3 "GameSpikes14:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes14:SpikeTrapBase|GameSpikes14:Spikes|GameSpikes14:Spike3|GameSpikes14:SpikeShape3.inMesh" 
-		""
-		3 "GameSpikes14:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes14:SpikeTrapBase|GameSpikes14:SpikeBase|GameSpikes14:SpikeBaseShape.inMesh" 
 		""
 		3 "GameSpikes14:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes14:SpikeTrapBase|GameSpikes14:Spikes|GameSpikes14:Spike1|GameSpikes14:SpikeShape1.inMesh" 
 		""
-		3 "GameSpikes14:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes14:SpikeTrapBase|GameSpikes14:Spikes|GameSpikes14:Spike2|GameSpikes14:SpikeShape2.inMesh" 
+		3 "GameSpikes14:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes14:SpikeTrapBase|GameSpikes14:SpikeBase|GameSpikes14:SpikeBaseShape.inMesh" 
+		""
+		3 "GameSpikes14:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes14:SpikeTrapBase|GameSpikes14:Spikes|GameSpikes14:Spike3|GameSpikes14:SpikeShape3.inMesh" 
 		""
 		5 4 "GameSpikesRN14" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes14:SpikeTrapBase|GameSpikes14:SpikeBase|GameSpikes14:SpikeBaseShape.inMesh" 
 		"GameSpikesRN14.placeHolderList[1]" ""
@@ -8869,15 +8872,15 @@ createNode reference -n "GameSpikesRN15";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes15:SpikeTrapBase|GameSpikes15:Spikes|GameSpikes15:Spike4|GameSpikes15:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes15:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes15:SpikeTrapBase|GameSpikes15:Spikes|GameSpikes15:Spike2|GameSpikes15:SpikeShape2.inMesh" 
+		3 "GameSpikes15:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes15:SpikeTrapBase|GameSpikes15:Spikes|GameSpikes15:Spike1|GameSpikes15:SpikeShape1.inMesh" 
 		""
 		3 "GameSpikes15:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes15:SpikeTrapBase|GameSpikes15:SpikeBase|GameSpikes15:SpikeBaseShape.inMesh" 
 		""
+		3 "GameSpikes15:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes15:SpikeTrapBase|GameSpikes15:Spikes|GameSpikes15:Spike3|GameSpikes15:SpikeShape3.inMesh" 
+		""
 		3 "GameSpikes15:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes15:SpikeTrapBase|GameSpikes15:Spikes|GameSpikes15:Spike4|GameSpikes15:SpikeShape4.inMesh" 
 		""
-		3 "GameSpikes15:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes15:SpikeTrapBase|GameSpikes15:Spikes|GameSpikes15:Spike1|GameSpikes15:SpikeShape1.inMesh" 
-		""
-		3 "GameSpikes15:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes15:SpikeTrapBase|GameSpikes15:Spikes|GameSpikes15:Spike3|GameSpikes15:SpikeShape3.inMesh" 
+		3 "GameSpikes15:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes15:SpikeTrapBase|GameSpikes15:Spikes|GameSpikes15:Spike2|GameSpikes15:SpikeShape2.inMesh" 
 		""
 		5 4 "GameSpikesRN15" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes15:SpikeTrapBase|GameSpikes15:SpikeBase|GameSpikes15:SpikeBaseShape.inMesh" 
 		"GameSpikesRN15.placeHolderList[1]" ""
@@ -9129,13 +9132,13 @@ createNode reference -n "GameSpikesRN16";
 		"pnts[80]" " -type \"float3\" 0 0 0"
 		3 "GameSpikes16:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes16:SpikeTrapBase|GameSpikes16:Spikes|GameSpikes16:Spike2|GameSpikes16:SpikeShape2.inMesh" 
 		""
-		3 "GameSpikes16:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes16:SpikeTrapBase|GameSpikes16:SpikeBase|GameSpikes16:SpikeBaseShape.inMesh" 
-		""
 		3 "GameSpikes16:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes16:SpikeTrapBase|GameSpikes16:Spikes|GameSpikes16:Spike1|GameSpikes16:SpikeShape1.inMesh" 
 		""
-		3 "GameSpikes16:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes16:SpikeTrapBase|GameSpikes16:Spikes|GameSpikes16:Spike3|GameSpikes16:SpikeShape3.inMesh" 
+		3 "GameSpikes16:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes16:SpikeTrapBase|GameSpikes16:SpikeBase|GameSpikes16:SpikeBaseShape.inMesh" 
 		""
 		3 "GameSpikes16:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes16:SpikeTrapBase|GameSpikes16:Spikes|GameSpikes16:Spike4|GameSpikes16:SpikeShape4.inMesh" 
+		""
+		3 "GameSpikes16:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes16:SpikeTrapBase|GameSpikes16:Spikes|GameSpikes16:Spike3|GameSpikes16:SpikeShape3.inMesh" 
 		""
 		5 4 "GameSpikesRN16" "|DungeonFloorOopsAllSpikes|SpikeGroup3|GameSpikes16:SpikeTrapBase|GameSpikes16:SpikeBase|GameSpikes16:SpikeBaseShape.inMesh" 
 		"GameSpikesRN16.placeHolderList[1]" ""
@@ -9385,15 +9388,15 @@ createNode reference -n "GameSpikesRN17";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes17:SpikeTrapBase|GameSpikes17:Spikes|GameSpikes17:Spike4|GameSpikes17:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
+		3 "GameSpikes17:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes17:SpikeTrapBase|GameSpikes17:Spikes|GameSpikes17:Spike3|GameSpikes17:SpikeShape3.inMesh" 
+		""
+		3 "GameSpikes17:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes17:SpikeTrapBase|GameSpikes17:Spikes|GameSpikes17:Spike1|GameSpikes17:SpikeShape1.inMesh" 
+		""
 		3 "GameSpikes17:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes17:SpikeTrapBase|GameSpikes17:Spikes|GameSpikes17:Spike4|GameSpikes17:SpikeShape4.inMesh" 
 		""
 		3 "GameSpikes17:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes17:SpikeTrapBase|GameSpikes17:Spikes|GameSpikes17:Spike2|GameSpikes17:SpikeShape2.inMesh" 
 		""
 		3 "GameSpikes17:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes17:SpikeTrapBase|GameSpikes17:SpikeBase|GameSpikes17:SpikeBaseShape.inMesh" 
-		""
-		3 "GameSpikes17:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes17:SpikeTrapBase|GameSpikes17:Spikes|GameSpikes17:Spike1|GameSpikes17:SpikeShape1.inMesh" 
-		""
-		3 "GameSpikes17:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes17:SpikeTrapBase|GameSpikes17:Spikes|GameSpikes17:Spike3|GameSpikes17:SpikeShape3.inMesh" 
 		""
 		5 4 "GameSpikesRN17" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes17:SpikeTrapBase|GameSpikes17:SpikeBase|GameSpikes17:SpikeBaseShape.inMesh" 
 		"GameSpikesRN17.placeHolderList[1]" ""
@@ -9643,15 +9646,15 @@ createNode reference -n "GameSpikesRN18";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes18:SpikeTrapBase|GameSpikes18:Spikes|GameSpikes18:Spike4|GameSpikes18:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes18:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes18:SpikeTrapBase|GameSpikes18:Spikes|GameSpikes18:Spike4|GameSpikes18:SpikeShape4.inMesh" 
+		3 "GameSpikes18:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes18:SpikeTrapBase|GameSpikes18:SpikeBase|GameSpikes18:SpikeBaseShape.inMesh" 
 		""
 		3 "GameSpikes18:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes18:SpikeTrapBase|GameSpikes18:Spikes|GameSpikes18:Spike3|GameSpikes18:SpikeShape3.inMesh" 
 		""
-		3 "GameSpikes18:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes18:SpikeTrapBase|GameSpikes18:SpikeBase|GameSpikes18:SpikeBaseShape.inMesh" 
+		3 "GameSpikes18:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes18:SpikeTrapBase|GameSpikes18:Spikes|GameSpikes18:Spike2|GameSpikes18:SpikeShape2.inMesh" 
+		""
+		3 "GameSpikes18:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes18:SpikeTrapBase|GameSpikes18:Spikes|GameSpikes18:Spike4|GameSpikes18:SpikeShape4.inMesh" 
 		""
 		3 "GameSpikes18:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes18:SpikeTrapBase|GameSpikes18:Spikes|GameSpikes18:Spike1|GameSpikes18:SpikeShape1.inMesh" 
-		""
-		3 "GameSpikes18:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes18:SpikeTrapBase|GameSpikes18:Spikes|GameSpikes18:Spike2|GameSpikes18:SpikeShape2.inMesh" 
 		""
 		5 4 "GameSpikesRN18" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes18:SpikeTrapBase|GameSpikes18:SpikeBase|GameSpikes18:SpikeBaseShape.inMesh" 
 		"GameSpikesRN18.placeHolderList[1]" ""
@@ -9901,15 +9904,15 @@ createNode reference -n "GameSpikesRN19";
 		"pnts[78]" " -type \"float3\" 0 0 0"
 		2 "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes19:SpikeTrapBase|GameSpikes19:Spikes|GameSpikes19:Spike4|GameSpikes19:SpikeShape4" 
 		"pnts[80]" " -type \"float3\" 0 0 0"
-		3 "GameSpikes19:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes19:SpikeTrapBase|GameSpikes19:Spikes|GameSpikes19:Spike1|GameSpikes19:SpikeShape1.inMesh" 
-		""
-		3 "GameSpikes19:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes19:SpikeTrapBase|GameSpikes19:SpikeBase|GameSpikes19:SpikeBaseShape.inMesh" 
-		""
-		3 "GameSpikes19:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes19:SpikeTrapBase|GameSpikes19:Spikes|GameSpikes19:Spike4|GameSpikes19:SpikeShape4.inMesh" 
-		""
 		3 "GameSpikes19:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes19:SpikeTrapBase|GameSpikes19:Spikes|GameSpikes19:Spike3|GameSpikes19:SpikeShape3.inMesh" 
 		""
 		3 "GameSpikes19:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes19:SpikeTrapBase|GameSpikes19:Spikes|GameSpikes19:Spike2|GameSpikes19:SpikeShape2.inMesh" 
+		""
+		3 "GameSpikes19:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes19:SpikeTrapBase|GameSpikes19:SpikeBase|GameSpikes19:SpikeBaseShape.inMesh" 
+		""
+		3 "GameSpikes19:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes19:SpikeTrapBase|GameSpikes19:Spikes|GameSpikes19:Spike1|GameSpikes19:SpikeShape1.inMesh" 
+		""
+		3 "GameSpikes19:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes19:SpikeTrapBase|GameSpikes19:Spikes|GameSpikes19:Spike4|GameSpikes19:SpikeShape4.inMesh" 
 		""
 		5 4 "GameSpikesRN19" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes19:SpikeTrapBase|GameSpikes19:SpikeBase|GameSpikes19:SpikeBaseShape.inMesh" 
 		"GameSpikesRN19.placeHolderList[1]" ""
@@ -10161,13 +10164,13 @@ createNode reference -n "GameSpikesRN20";
 		"pnts[80]" " -type \"float3\" 0 0 0"
 		3 "GameSpikes20:polyTweakUV13.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes20:SpikeTrapBase|GameSpikes20:Spikes|GameSpikes20:Spike2|GameSpikes20:SpikeShape2.inMesh" 
 		""
-		3 "GameSpikes20:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes20:SpikeTrapBase|GameSpikes20:Spikes|GameSpikes20:Spike1|GameSpikes20:SpikeShape1.inMesh" 
-		""
 		3 "GameSpikes20:polyTweakUV16.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes20:SpikeTrapBase|GameSpikes20:SpikeBase|GameSpikes20:SpikeBaseShape.inMesh" 
 		""
-		3 "GameSpikes20:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes20:SpikeTrapBase|GameSpikes20:Spikes|GameSpikes20:Spike3|GameSpikes20:SpikeShape3.inMesh" 
+		3 "GameSpikes20:polyTweakUV12.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes20:SpikeTrapBase|GameSpikes20:Spikes|GameSpikes20:Spike1|GameSpikes20:SpikeShape1.inMesh" 
 		""
 		3 "GameSpikes20:polyTweakUV15.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes20:SpikeTrapBase|GameSpikes20:Spikes|GameSpikes20:Spike4|GameSpikes20:SpikeShape4.inMesh" 
+		""
+		3 "GameSpikes20:polyTweakUV14.output" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes20:SpikeTrapBase|GameSpikes20:Spikes|GameSpikes20:Spike3|GameSpikes20:SpikeShape3.inMesh" 
 		""
 		5 4 "GameSpikesRN20" "|DungeonFloorOopsAllSpikes|SpikeGroup4|GameSpikes20:SpikeTrapBase|GameSpikes20:SpikeBase|GameSpikes20:SpikeBaseShape.inMesh" 
 		"GameSpikesRN20.placeHolderList[1]" ""
@@ -14062,6 +14065,26 @@ createNode reference -n "sharedReferenceNode";
 	rename -uid "90F053AE-4D53-F4C2-41C9-6F82688B6E56";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"sharedReferenceNode";
+createNode aiOptions -s -n "defaultArnoldRenderOptions";
+	rename -uid "A4E7D652-4134-9A09-9938-64B538FAE94D";
+	setAttr ".version" -type "string" "5.5.4.2";
+createNode aiAOVFilter -s -n "defaultArnoldFilter";
+	rename -uid "3DF594EA-4D5F-07EF-A9C9-F994BB36532D";
+	setAttr ".ai_translator" -type "string" "gaussian";
+createNode aiAOVDriver -s -n "defaultArnoldDriver";
+	rename -uid "848C879D-4A7C-BCCC-CF6F-93B1C5AE9739";
+	setAttr ".ai_translator" -type "string" "exr";
+createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
+	rename -uid "3EAD7D96-4FF3-257C-9315-BCA9BD619E29";
+	setAttr ".ai_translator" -type "string" "maya";
+	setAttr ".output_mode" 0;
+createNode aiImagerDenoiserOidn -s -n "defaultArnoldDenoiser";
+	rename -uid "0E09B58F-47CE-1EFC-38C6-F0992462FDC3";
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "35850603-41E1-FAB3-0DFC-258FFD25E8F9";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -521.48837514897821 -1964.9231765708871 ;
+	setAttr ".tgi[0].vh" -type "double2" 4476.1304738825374 187.45769028213306 ;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -14089,15 +14112,16 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 126 ".dsm";
+	setAttr -s 127 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 2 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
-select -ne :initialMaterialInfo;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
+	setAttr ".outf" 51;
+	setAttr ".imfkey" -type "string" "exr";
 	setAttr ".dss" -type "string" "openPBR_shader1";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
@@ -14113,6 +14137,8 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "transformGeometry1.og" "GameSpikesRN.phl[1]";
 connectAttr "transformGeometry2.og" "GameSpikesRN.phl[2]";
 connectAttr "transformGeometry3.og" "GameSpikesRN.phl[3]";
@@ -14606,6 +14632,12 @@ connectAttr "polyNormalizeUV16.out" "polyTweakUV21.ip";
 connectAttr "polyTweakUV21.out" "polyMapCut7.ip";
 connectAttr "polyMapCut7.out" "polyMapCut8.ip";
 connectAttr "polyMapCut8.out" "polyTweakUV22.ip";
+connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
+		;
+connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
+		 -na;
+connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
+connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "texturedFacets.pa" ":renderPartition.st" -na;
 connectAttr "texturedFacets1.pa" ":renderPartition.st" -na;
 connectAttr "texturedFacets2.pa" ":renderPartition.st" -na;
