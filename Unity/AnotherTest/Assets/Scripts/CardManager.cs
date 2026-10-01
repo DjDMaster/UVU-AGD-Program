@@ -14,9 +14,28 @@ public class CardManager : MonoBehaviour
     private List<CardSO> alreadySelectedCards = new List<CardSO>();
     private void Start()
     {
-        RandomizeNewCards();
+        Debug.Log(
+            $"CARD MANAGER STARTED\n" +
+            $"GameObject: {gameObject.name}\n" +
+            $"Path: {GetGameObjectPath(transform)}\n" +
+            $"Scene: {gameObject.scene.name}\n" +
+            $"Deck Size: {deck.Count}"
+        );
     }
-        private void RandomizeNewCards()
+
+    private string GetGameObjectPath(Transform current)
+    {
+        string path = current.name;
+
+        while (current.parent != null)
+        {
+            current = current.parent;
+            path = current.name + "/" + path;
+        }
+
+        return path;
+    }        
+   public void RandomizeNewCards()
     {
         // Destroy previous cards
         if (cardOne != null)
@@ -30,6 +49,24 @@ public class CardManager : MonoBehaviour
 
         // Copy deck
         List<CardSO> availableCards = new List<CardSO>(deck);
+
+                Debug.Log("Deck list size: " + deck.Count);
+
+        for (int i = 0; i < deck.Count; i++)
+        {
+            if (deck[i] == null)
+            {
+                Debug.LogError("Deck element " + i + " is NULL!");
+            }
+            else
+            {
+                Debug.Log(
+                    "Deck element " + i +
+                    ": " + deck[i].name +
+                    " | Unique: " + deck[i].isUnique
+                );
+            }
+        }
 
         // Remove null cards
         availableCards.RemoveAll(card => card == null);
