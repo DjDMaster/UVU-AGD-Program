@@ -19,6 +19,16 @@
       "source": "builtin",
       "testable": false
     },
+    "com.unity.ai.navigation@2.0.15": {
+      "name": "com.unity.ai.navigation",
+      "displayName": "AI Navigation",
+      "resolvedPath": "C:\\Users\\djdma\\Github\\AGD-Program\\UVU-AGD-Program\\Unity\\AnotherTest\\Library\\PackageCache\\com.unity.ai.navigation@a9c5744fc1de",
+      "fingerprint": "a9c5744fc1defd1740be5e82c85448725f66f86e",
+      "editorCompatibility": "6000.0.0a1",
+      "version": "2.0.15",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.cinemachine@3.1.7": {
       "name": "com.unity.cinemachine",
       "displayName": "Cinemachine",
