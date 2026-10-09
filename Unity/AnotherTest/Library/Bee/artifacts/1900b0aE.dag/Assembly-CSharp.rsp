@@ -456,6 +456,7 @@
 "Assets/Scripts/DealDamage.cs"
 "Assets/Scripts/EnemyHealth.cs"
 "Assets/Scripts/EnemyWalkies.cs"
+"Assets/Scripts/ExperienceManager.cs"
 "Assets/Scripts/PauseMenu.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/TriggerDoorController.cs"

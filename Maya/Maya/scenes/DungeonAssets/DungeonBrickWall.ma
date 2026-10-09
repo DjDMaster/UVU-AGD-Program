@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: DungeonBrickWall.ma
-//Last modified: Thu, Oct 08, 2026 08:15:53 PM
+//Last modified: Thu, Oct 08, 2026 10:04:34 PM
 //Codeset: 1252
 requires maya "2026";
 requires "stereoCamera" "10.0";
@@ -12,17 +12,17 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "EF395764-469A-31B3-B06A-7C94CF9902E5";
+fileInfo "UUID" "680CD4E8-4FCD-0904-C1D8-C4BA2374793F";
 createNode transform -s -n "persp";
 	rename -uid "486AC6E8-4395-E63B-8E28-8599206BA411";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 7.9553503724883461 4.2035588753437194 12.052741187210279 ;
-	setAttr ".r" -type "double3" -0.33835272531546623 757.79999999995312 -1.5723549847649144e-17 ;
+	setAttr ".t" -type "double3" 9.9290291595846778 5.7447155512941315 16.239971534229099 ;
+	setAttr ".r" -type "double3" -4.5383527253149296 754.99999999994861 -2.4267127083090702e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "ACC6E7A8-4544-1F85-AB33-CF87878EC242";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 16.069007855657404;
+	setAttr ".coi" 20.676406740870746;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -3321,20 +3321,20 @@ createNode aiAreaLight -n "aiAreaLightShape1" -p "aiAreaLight1";
 	setAttr ".ai_translator" -type "string" "quad";
 	setAttr ".aal" -type "attributeAlias" 4 "exposure" "aiExposure" "normalize" "aiNormalize" ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "E224BD83-4450-54CC-C513-B59563E6D099";
+	rename -uid "C76DA4A0-4713-2E54-5FCD-8FABD31C27C6";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "A6F15DB1-4C8E-1B50-645B-7BAFFBD637DD";
+	rename -uid "3926AF63-45A8-604E-A152-3EB97FAB54AF";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "8ED41B27-4429-769B-7553-0A89B653F6FA";
+	rename -uid "CE45CEC1-4E5D-CB66-B6EC-5DBC0BE6B35F";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "11E81F70-4129-D239-E77A-D8B53982A744";
+	rename -uid "B52D2B8B-4AD3-0F78-73E4-27ACC4901821";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "5397DF1C-434A-EDA3-BDD7-D1A657D2C8AE";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "4C543E1C-4A52-E138-5A16-F1833AA3D33D";
+	rename -uid "7486863A-4A60-1F1D-F9DC-8CB927FA71E0";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "3A478D83-404A-0D77-CCA8-BD9C825AB456";
 	setAttr ".g" yes;
@@ -3399,23 +3399,6 @@ createNode shadingEngine -n "openPBRSurface1SG";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo1";
 	rename -uid "F30702C7-41B6-F33E-1EAA-4DA9547895BE";
-createNode file -n "DungeonBrickWall_openPBR_shader1_MaskMap_1";
-	rename -uid "94A50D2B-4304-11E9-493A-779FFA0D952B";
-	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameBrickWallTextures/DungeonBrickWall_openPBR_shader1_MaskMap.png";
-	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
-createNode place2dTexture -n "place2dTexture1";
-	rename -uid "62F634E1-4C12-6970-139E-E8AFC62A6F69";
-createNode file -n "DungeonBrickWall_openPBR_shader1_Normal_1";
-	rename -uid "0EF2805D-4F05-8CD7-F1D1-699562BEE96A";
-	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameBrickWallTextures/DungeonBrickWall_openPBR_shader1_Normal.png";
-	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
-createNode place2dTexture -n "place2dTexture2";
-	rename -uid "12FD2507-4853-1AED-61CB-A890FCAF7420";
-createNode file -n "DungeonBrickWall_openPBR_shader1_BaseMap_1";
-	rename -uid "83A246E2-4874-4789-FB30-428FEA475E17";
-	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
-createNode place2dTexture -n "place2dTexture3";
-	rename -uid "6F199A6D-4248-6CFB-BF3A-73B78A0C7BFC";
 createNode aiNormalMap -n "aiNormalMap1";
 	rename -uid "F539C8A9-4C03-DBEC-5838-FC8C87DADEE6";
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
@@ -3434,39 +3417,81 @@ createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
 	setAttr ".output_mode" 0;
 createNode aiImagerDenoiserOidn -s -n "defaultArnoldDenoiser";
 	rename -uid "E69DA9D2-4E54-AB31-C95F-65BBECB88C0F";
+createNode file -n "DungeonBrickWall_openPBR_shader1_BaseColor_1";
+	rename -uid "2CD9A5D6-4081-C827-2615-8AA187BA36DF";
+	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameBrickWallTextures/DungeonBrickWall_openPBR_shader1_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
+createNode place2dTexture -n "place2dTexture4";
+	rename -uid "3057DD39-4F7A-59BC-F874-8CB00596D08A";
+createNode file -n "DungeonBrickWall_openPBR_shader1_Height_1";
+	rename -uid "FDFCE49A-491D-C349-A0AA-8FADF0123C43";
+	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameBrickWallTextures/DungeonBrickWall_openPBR_shader1_Height.png";
+	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
+createNode place2dTexture -n "place2dTexture5";
+	rename -uid "DBACF272-4C8A-73B9-4369-9CBBAD8DAFA3";
+createNode file -n "DungeonBrickWall_openPBR_shader1_Metallic_1";
+	rename -uid "66BA36C1-4269-5520-31CF-C69A640F8AA9";
+	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameBrickWallTextures/DungeonBrickWall_openPBR_shader1_Metallic.png";
+	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
+createNode place2dTexture -n "place2dTexture6";
+	rename -uid "4E48F5DF-46E8-322C-BEC3-C9AE493FAF03";
+createNode file -n "DungeonBrickWall_openPBR_shader1_Normal_2";
+	rename -uid "9447C0C2-4089-22CA-E5BC-F7AA741E9626";
+	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameBrickWallTextures/DungeonBrickWall_openPBR_shader1_Normal.png";
+	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
+createNode place2dTexture -n "place2dTexture7";
+	rename -uid "F0EAD5F4-45CA-E574-D170-C59345137743";
+createNode file -n "DungeonBrickWall_openPBR_shader1_Roughness_1";
+	rename -uid "DF599300-435B-BF54-A912-AF9BF088B729";
+	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameBrickWallTextures/DungeonBrickWall_openPBR_shader1_Roughness.png";
+	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
+createNode place2dTexture -n "place2dTexture8";
+	rename -uid "3FA9C8A5-4F7A-F5AE-7ADA-FD8FBF143816";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "D140FB14-45A6-5B68-2929-A189956D88A2";
+	rename -uid "271EEAC5-41F7-994E-F366-CE9948007A87";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -756.09614912629274 -656.63407901499409 ;
-	setAttr ".tgi[0].vh" -type "double2" 1120.2267426839958 -58.539617027511412 ;
-	setAttr -s 9 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" -238.9290771484375;
-	setAttr ".tgi[0].ni[0].y" -238.224853515625;
-	setAttr ".tgi[0].ni[0].nvs" 1931;
-	setAttr ".tgi[0].ni[1].x" 418.45236206054688;
-	setAttr ".tgi[0].ni[1].y" -70.238090515136719;
+	setAttr ".tgi[0].vl" -type "double2" -1422.0527323304082 -705.28020738936891 ;
+	setAttr ".tgi[0].vh" -type "double2" 994.93122097163882 65.154734001692674 ;
+	setAttr -s 13 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -551.2283935546875;
+	setAttr ".tgi[0].ni[0].y" 32.555042266845703;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" -772.656982421875;
+	setAttr ".tgi[0].ni[1].y" 32.555042266845703;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
 	setAttr ".tgi[0].ni[2].x" -125.44647216796875;
 	setAttr ".tgi[0].ni[2].y" -567.95269775390625;
 	setAttr ".tgi[0].ni[2].nvs" 1931;
-	setAttr ".tgi[0].ni[3].x" -447.33099365234375;
-	setAttr ".tgi[0].ni[3].y" -429.4619140625;
-	setAttr ".tgi[0].ni[3].nvs" 1931;
-	setAttr ".tgi[0].ni[4].x" -195.60342407226562;
-	setAttr ".tgi[0].ni[4].y" -410.5250244140625;
-	setAttr ".tgi[0].ni[4].nvs" 1931;
-	setAttr ".tgi[0].ni[5].x" -466.13836669921875;
-	setAttr ".tgi[0].ni[5].y" -267.5806884765625;
-	setAttr ".tgi[0].ni[5].nvs" 1931;
-	setAttr ".tgi[0].ni[6].x" 189.26431274414062;
-	setAttr ".tgi[0].ni[6].y" -50.738323211669922;
-	setAttr ".tgi[0].ni[6].nvs" 1971;
-	setAttr ".tgi[0].ni[7].x" -484.50872802734375;
-	setAttr ".tgi[0].ni[7].y" -96.804115295410156;
-	setAttr ".tgi[0].ni[7].nvs" 1931;
-	setAttr ".tgi[0].ni[8].x" -230.99873352050781;
-	setAttr ".tgi[0].ni[8].y" -82.734130859375;
-	setAttr ".tgi[0].ni[8].nvs" 1931;
+	setAttr ".tgi[0].ni[3].x" 418.45236206054688;
+	setAttr ".tgi[0].ni[3].y" -70.238090515136719;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" 189.26431274414062;
+	setAttr ".tgi[0].ni[4].y" -50.738323211669922;
+	setAttr ".tgi[0].ni[4].nvs" 1971;
+	setAttr ".tgi[0].ni[5].x" -461.38766479492188;
+	setAttr ".tgi[0].ni[5].y" -121.7188720703125;
+	setAttr ".tgi[0].ni[5].nvs" 1923;
+	setAttr ".tgi[0].ni[6].x" -285.23428344726562;
+	setAttr ".tgi[0].ni[6].y" -284.42965698242188;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" -1411.1636962890625;
+	setAttr ".tgi[0].ni[7].y" -521.2862548828125;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" -495.36199951171875;
+	setAttr ".tgi[0].ni[8].y" -435.33078002929688;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" -273.93344116210938;
+	setAttr ".tgi[0].ni[9].y" -435.33078002929688;
+	setAttr ".tgi[0].ni[9].nvs" 1923;
+	setAttr ".tgi[0].ni[10].x" -1189.735107421875;
+	setAttr ".tgi[0].ni[10].y" -521.2862548828125;
+	setAttr ".tgi[0].ni[10].nvs" 1923;
+	setAttr ".tgi[0].ni[11].x" -506.662841796875;
+	setAttr ".tgi[0].ni[11].y" -284.42965698242188;
+	setAttr ".tgi[0].ni[11].nvs" 1923;
+	setAttr ".tgi[0].ni[12].x" -239.9591064453125;
+	setAttr ".tgi[0].ni[12].y" -121.7188720703125;
+	setAttr ".tgi[0].ni[12].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -3484,11 +3509,11 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 4 ".u";
+	setAttr -s 6 ".u";
 select -ne :defaultRenderingList1;
 select -ne :lightList1;
 select -ne :defaultTextureList1;
-	setAttr -s 3 ".tx";
+	setAttr -s 5 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -3526,10 +3551,12 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 relationship "shadowLink" ":lightLinker1" "openPBRSurface1SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
-connectAttr "DungeonBrickWall_openPBR_shader1_BaseMap_1.oc" "DungeonBrickWallMat.bc"
+connectAttr "DungeonBrickWall_openPBR_shader1_BaseColor_1.oc" "DungeonBrickWallMat.bc"
 		;
 connectAttr "aiNormalMap1.out" "DungeonBrickWallMat.n";
-connectAttr "DungeonBrickWall_openPBR_shader1_MaskMap_1.oa" "DungeonBrickWallMat.sr"
+connectAttr "DungeonBrickWall_openPBR_shader1_Roughness_1.oa" "DungeonBrickWallMat.sr"
+		;
+connectAttr "DungeonBrickWall_openPBR_shader1_Height_1.oa" "DungeonBrickWallMat.dr"
 		;
 connectAttr "DungeonBrickWallMat.oc" "openPBRSurface1SG.ss";
 connectAttr "pCubeShape18.iog" "openPBRSurface1SG.dsm" -na;
@@ -3545,156 +3572,251 @@ connectAttr "pCubeShape14.iog" "openPBRSurface1SG.dsm" -na;
 connectAttr "pCubeShape17.iog" "openPBRSurface1SG.dsm" -na;
 connectAttr "openPBRSurface1SG.msg" "materialInfo1.sg";
 connectAttr "DungeonBrickWallMat.msg" "materialInfo1.m";
-connectAttr "DungeonBrickWall_openPBR_shader1_BaseMap_1.msg" "materialInfo1.t" -na
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "DungeonBrickWall_openPBR_shader1_MaskMap_1.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "DungeonBrickWall_openPBR_shader1_MaskMap_1.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "DungeonBrickWall_openPBR_shader1_MaskMap_1.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "DungeonBrickWall_openPBR_shader1_MaskMap_1.ws"
-		;
-connectAttr "place2dTexture1.c" "DungeonBrickWall_openPBR_shader1_MaskMap_1.c";
-connectAttr "place2dTexture1.tf" "DungeonBrickWall_openPBR_shader1_MaskMap_1.tf"
-		;
-connectAttr "place2dTexture1.rf" "DungeonBrickWall_openPBR_shader1_MaskMap_1.rf"
-		;
-connectAttr "place2dTexture1.mu" "DungeonBrickWall_openPBR_shader1_MaskMap_1.mu"
-		;
-connectAttr "place2dTexture1.mv" "DungeonBrickWall_openPBR_shader1_MaskMap_1.mv"
-		;
-connectAttr "place2dTexture1.s" "DungeonBrickWall_openPBR_shader1_MaskMap_1.s";
-connectAttr "place2dTexture1.wu" "DungeonBrickWall_openPBR_shader1_MaskMap_1.wu"
-		;
-connectAttr "place2dTexture1.wv" "DungeonBrickWall_openPBR_shader1_MaskMap_1.wv"
-		;
-connectAttr "place2dTexture1.re" "DungeonBrickWall_openPBR_shader1_MaskMap_1.re"
-		;
-connectAttr "place2dTexture1.of" "DungeonBrickWall_openPBR_shader1_MaskMap_1.of"
-		;
-connectAttr "place2dTexture1.r" "DungeonBrickWall_openPBR_shader1_MaskMap_1.ro";
-connectAttr "place2dTexture1.n" "DungeonBrickWall_openPBR_shader1_MaskMap_1.n";
-connectAttr "place2dTexture1.vt1" "DungeonBrickWall_openPBR_shader1_MaskMap_1.vt1"
-		;
-connectAttr "place2dTexture1.vt2" "DungeonBrickWall_openPBR_shader1_MaskMap_1.vt2"
-		;
-connectAttr "place2dTexture1.vt3" "DungeonBrickWall_openPBR_shader1_MaskMap_1.vt3"
-		;
-connectAttr "place2dTexture1.vc1" "DungeonBrickWall_openPBR_shader1_MaskMap_1.vc1"
-		;
-connectAttr "place2dTexture1.o" "DungeonBrickWall_openPBR_shader1_MaskMap_1.uv";
-connectAttr "place2dTexture1.ofs" "DungeonBrickWall_openPBR_shader1_MaskMap_1.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "DungeonBrickWall_openPBR_shader1_Normal_1.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "DungeonBrickWall_openPBR_shader1_Normal_1.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "DungeonBrickWall_openPBR_shader1_Normal_1.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "DungeonBrickWall_openPBR_shader1_Normal_1.ws"
-		;
-connectAttr "place2dTexture2.c" "DungeonBrickWall_openPBR_shader1_Normal_1.c";
-connectAttr "place2dTexture2.tf" "DungeonBrickWall_openPBR_shader1_Normal_1.tf";
-connectAttr "place2dTexture2.rf" "DungeonBrickWall_openPBR_shader1_Normal_1.rf";
-connectAttr "place2dTexture2.mu" "DungeonBrickWall_openPBR_shader1_Normal_1.mu";
-connectAttr "place2dTexture2.mv" "DungeonBrickWall_openPBR_shader1_Normal_1.mv";
-connectAttr "place2dTexture2.s" "DungeonBrickWall_openPBR_shader1_Normal_1.s";
-connectAttr "place2dTexture2.wu" "DungeonBrickWall_openPBR_shader1_Normal_1.wu";
-connectAttr "place2dTexture2.wv" "DungeonBrickWall_openPBR_shader1_Normal_1.wv";
-connectAttr "place2dTexture2.re" "DungeonBrickWall_openPBR_shader1_Normal_1.re";
-connectAttr "place2dTexture2.of" "DungeonBrickWall_openPBR_shader1_Normal_1.of";
-connectAttr "place2dTexture2.r" "DungeonBrickWall_openPBR_shader1_Normal_1.ro";
-connectAttr "place2dTexture2.n" "DungeonBrickWall_openPBR_shader1_Normal_1.n";
-connectAttr "place2dTexture2.vt1" "DungeonBrickWall_openPBR_shader1_Normal_1.vt1"
-		;
-connectAttr "place2dTexture2.vt2" "DungeonBrickWall_openPBR_shader1_Normal_1.vt2"
-		;
-connectAttr "place2dTexture2.vt3" "DungeonBrickWall_openPBR_shader1_Normal_1.vt3"
-		;
-connectAttr "place2dTexture2.vc1" "DungeonBrickWall_openPBR_shader1_Normal_1.vc1"
-		;
-connectAttr "place2dTexture2.o" "DungeonBrickWall_openPBR_shader1_Normal_1.uv";
-connectAttr "place2dTexture2.ofs" "DungeonBrickWall_openPBR_shader1_Normal_1.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "DungeonBrickWall_openPBR_shader1_BaseMap_1.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "DungeonBrickWall_openPBR_shader1_BaseMap_1.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "DungeonBrickWall_openPBR_shader1_BaseMap_1.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "DungeonBrickWall_openPBR_shader1_BaseMap_1.ws"
-		;
-connectAttr "place2dTexture3.c" "DungeonBrickWall_openPBR_shader1_BaseMap_1.c";
-connectAttr "place2dTexture3.tf" "DungeonBrickWall_openPBR_shader1_BaseMap_1.tf"
-		;
-connectAttr "place2dTexture3.rf" "DungeonBrickWall_openPBR_shader1_BaseMap_1.rf"
-		;
-connectAttr "place2dTexture3.mu" "DungeonBrickWall_openPBR_shader1_BaseMap_1.mu"
-		;
-connectAttr "place2dTexture3.mv" "DungeonBrickWall_openPBR_shader1_BaseMap_1.mv"
-		;
-connectAttr "place2dTexture3.s" "DungeonBrickWall_openPBR_shader1_BaseMap_1.s";
-connectAttr "place2dTexture3.wu" "DungeonBrickWall_openPBR_shader1_BaseMap_1.wu"
-		;
-connectAttr "place2dTexture3.wv" "DungeonBrickWall_openPBR_shader1_BaseMap_1.wv"
-		;
-connectAttr "place2dTexture3.re" "DungeonBrickWall_openPBR_shader1_BaseMap_1.re"
-		;
-connectAttr "place2dTexture3.of" "DungeonBrickWall_openPBR_shader1_BaseMap_1.of"
-		;
-connectAttr "place2dTexture3.r" "DungeonBrickWall_openPBR_shader1_BaseMap_1.ro";
-connectAttr "place2dTexture3.n" "DungeonBrickWall_openPBR_shader1_BaseMap_1.n";
-connectAttr "place2dTexture3.vt1" "DungeonBrickWall_openPBR_shader1_BaseMap_1.vt1"
-		;
-connectAttr "place2dTexture3.vt2" "DungeonBrickWall_openPBR_shader1_BaseMap_1.vt2"
-		;
-connectAttr "place2dTexture3.vt3" "DungeonBrickWall_openPBR_shader1_BaseMap_1.vt3"
-		;
-connectAttr "place2dTexture3.vc1" "DungeonBrickWall_openPBR_shader1_BaseMap_1.vc1"
-		;
-connectAttr "place2dTexture3.o" "DungeonBrickWall_openPBR_shader1_BaseMap_1.uv";
-connectAttr "place2dTexture3.ofs" "DungeonBrickWall_openPBR_shader1_BaseMap_1.fs"
-		;
-connectAttr "DungeonBrickWall_openPBR_shader1_Normal_1.oc" "aiNormalMap1.normal"
-		;
+connectAttr "DungeonBrickWall_openPBR_shader1_BaseColor_1.msg" "materialInfo1.t"
+		 -na;
+connectAttr "DungeonBrickWall_openPBR_shader1_Normal_2.oc" "aiNormalMap1.input";
 connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
 		;
 connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
 		 -na;
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
-connectAttr "DungeonBrickWall_openPBR_shader1_MaskMap_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr ":defaultColorMgtGlobals.cme" "DungeonBrickWall_openPBR_shader1_BaseColor_1.cme"
 		;
-connectAttr "openPBRSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr ":defaultColorMgtGlobals.cfe" "DungeonBrickWall_openPBR_shader1_BaseColor_1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "DungeonBrickWall_openPBR_shader1_BaseColor_1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "DungeonBrickWall_openPBR_shader1_BaseColor_1.ws"
+		;
+connectAttr "place2dTexture4.c" "DungeonBrickWall_openPBR_shader1_BaseColor_1.c"
+		;
+connectAttr "place2dTexture4.tf" "DungeonBrickWall_openPBR_shader1_BaseColor_1.tf"
+		;
+connectAttr "place2dTexture4.rf" "DungeonBrickWall_openPBR_shader1_BaseColor_1.rf"
+		;
+connectAttr "place2dTexture4.mu" "DungeonBrickWall_openPBR_shader1_BaseColor_1.mu"
+		;
+connectAttr "place2dTexture4.mv" "DungeonBrickWall_openPBR_shader1_BaseColor_1.mv"
+		;
+connectAttr "place2dTexture4.s" "DungeonBrickWall_openPBR_shader1_BaseColor_1.s"
+		;
+connectAttr "place2dTexture4.wu" "DungeonBrickWall_openPBR_shader1_BaseColor_1.wu"
+		;
+connectAttr "place2dTexture4.wv" "DungeonBrickWall_openPBR_shader1_BaseColor_1.wv"
+		;
+connectAttr "place2dTexture4.re" "DungeonBrickWall_openPBR_shader1_BaseColor_1.re"
+		;
+connectAttr "place2dTexture4.of" "DungeonBrickWall_openPBR_shader1_BaseColor_1.of"
+		;
+connectAttr "place2dTexture4.r" "DungeonBrickWall_openPBR_shader1_BaseColor_1.ro"
+		;
+connectAttr "place2dTexture4.n" "DungeonBrickWall_openPBR_shader1_BaseColor_1.n"
+		;
+connectAttr "place2dTexture4.vt1" "DungeonBrickWall_openPBR_shader1_BaseColor_1.vt1"
+		;
+connectAttr "place2dTexture4.vt2" "DungeonBrickWall_openPBR_shader1_BaseColor_1.vt2"
+		;
+connectAttr "place2dTexture4.vt3" "DungeonBrickWall_openPBR_shader1_BaseColor_1.vt3"
+		;
+connectAttr "place2dTexture4.vc1" "DungeonBrickWall_openPBR_shader1_BaseColor_1.vc1"
+		;
+connectAttr "place2dTexture4.o" "DungeonBrickWall_openPBR_shader1_BaseColor_1.uv"
+		;
+connectAttr "place2dTexture4.ofs" "DungeonBrickWall_openPBR_shader1_BaseColor_1.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "DungeonBrickWall_openPBR_shader1_Height_1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "DungeonBrickWall_openPBR_shader1_Height_1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "DungeonBrickWall_openPBR_shader1_Height_1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "DungeonBrickWall_openPBR_shader1_Height_1.ws"
+		;
+connectAttr "place2dTexture5.c" "DungeonBrickWall_openPBR_shader1_Height_1.c";
+connectAttr "place2dTexture5.tf" "DungeonBrickWall_openPBR_shader1_Height_1.tf";
+connectAttr "place2dTexture5.rf" "DungeonBrickWall_openPBR_shader1_Height_1.rf";
+connectAttr "place2dTexture5.mu" "DungeonBrickWall_openPBR_shader1_Height_1.mu";
+connectAttr "place2dTexture5.mv" "DungeonBrickWall_openPBR_shader1_Height_1.mv";
+connectAttr "place2dTexture5.s" "DungeonBrickWall_openPBR_shader1_Height_1.s";
+connectAttr "place2dTexture5.wu" "DungeonBrickWall_openPBR_shader1_Height_1.wu";
+connectAttr "place2dTexture5.wv" "DungeonBrickWall_openPBR_shader1_Height_1.wv";
+connectAttr "place2dTexture5.re" "DungeonBrickWall_openPBR_shader1_Height_1.re";
+connectAttr "place2dTexture5.of" "DungeonBrickWall_openPBR_shader1_Height_1.of";
+connectAttr "place2dTexture5.r" "DungeonBrickWall_openPBR_shader1_Height_1.ro";
+connectAttr "place2dTexture5.n" "DungeonBrickWall_openPBR_shader1_Height_1.n";
+connectAttr "place2dTexture5.vt1" "DungeonBrickWall_openPBR_shader1_Height_1.vt1"
+		;
+connectAttr "place2dTexture5.vt2" "DungeonBrickWall_openPBR_shader1_Height_1.vt2"
+		;
+connectAttr "place2dTexture5.vt3" "DungeonBrickWall_openPBR_shader1_Height_1.vt3"
+		;
+connectAttr "place2dTexture5.vc1" "DungeonBrickWall_openPBR_shader1_Height_1.vc1"
+		;
+connectAttr "place2dTexture5.o" "DungeonBrickWall_openPBR_shader1_Height_1.uv";
+connectAttr "place2dTexture5.ofs" "DungeonBrickWall_openPBR_shader1_Height_1.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "DungeonBrickWall_openPBR_shader1_Metallic_1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "DungeonBrickWall_openPBR_shader1_Metallic_1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "DungeonBrickWall_openPBR_shader1_Metallic_1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "DungeonBrickWall_openPBR_shader1_Metallic_1.ws"
+		;
+connectAttr "place2dTexture6.c" "DungeonBrickWall_openPBR_shader1_Metallic_1.c";
+connectAttr "place2dTexture6.tf" "DungeonBrickWall_openPBR_shader1_Metallic_1.tf"
+		;
+connectAttr "place2dTexture6.rf" "DungeonBrickWall_openPBR_shader1_Metallic_1.rf"
+		;
+connectAttr "place2dTexture6.mu" "DungeonBrickWall_openPBR_shader1_Metallic_1.mu"
+		;
+connectAttr "place2dTexture6.mv" "DungeonBrickWall_openPBR_shader1_Metallic_1.mv"
+		;
+connectAttr "place2dTexture6.s" "DungeonBrickWall_openPBR_shader1_Metallic_1.s";
+connectAttr "place2dTexture6.wu" "DungeonBrickWall_openPBR_shader1_Metallic_1.wu"
+		;
+connectAttr "place2dTexture6.wv" "DungeonBrickWall_openPBR_shader1_Metallic_1.wv"
+		;
+connectAttr "place2dTexture6.re" "DungeonBrickWall_openPBR_shader1_Metallic_1.re"
+		;
+connectAttr "place2dTexture6.of" "DungeonBrickWall_openPBR_shader1_Metallic_1.of"
+		;
+connectAttr "place2dTexture6.r" "DungeonBrickWall_openPBR_shader1_Metallic_1.ro"
+		;
+connectAttr "place2dTexture6.n" "DungeonBrickWall_openPBR_shader1_Metallic_1.n";
+connectAttr "place2dTexture6.vt1" "DungeonBrickWall_openPBR_shader1_Metallic_1.vt1"
+		;
+connectAttr "place2dTexture6.vt2" "DungeonBrickWall_openPBR_shader1_Metallic_1.vt2"
+		;
+connectAttr "place2dTexture6.vt3" "DungeonBrickWall_openPBR_shader1_Metallic_1.vt3"
+		;
+connectAttr "place2dTexture6.vc1" "DungeonBrickWall_openPBR_shader1_Metallic_1.vc1"
+		;
+connectAttr "place2dTexture6.o" "DungeonBrickWall_openPBR_shader1_Metallic_1.uv"
+		;
+connectAttr "place2dTexture6.ofs" "DungeonBrickWall_openPBR_shader1_Metallic_1.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "DungeonBrickWall_openPBR_shader1_Normal_2.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "DungeonBrickWall_openPBR_shader1_Normal_2.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "DungeonBrickWall_openPBR_shader1_Normal_2.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "DungeonBrickWall_openPBR_shader1_Normal_2.ws"
+		;
+connectAttr "place2dTexture7.c" "DungeonBrickWall_openPBR_shader1_Normal_2.c";
+connectAttr "place2dTexture7.tf" "DungeonBrickWall_openPBR_shader1_Normal_2.tf";
+connectAttr "place2dTexture7.rf" "DungeonBrickWall_openPBR_shader1_Normal_2.rf";
+connectAttr "place2dTexture7.mu" "DungeonBrickWall_openPBR_shader1_Normal_2.mu";
+connectAttr "place2dTexture7.mv" "DungeonBrickWall_openPBR_shader1_Normal_2.mv";
+connectAttr "place2dTexture7.s" "DungeonBrickWall_openPBR_shader1_Normal_2.s";
+connectAttr "place2dTexture7.wu" "DungeonBrickWall_openPBR_shader1_Normal_2.wu";
+connectAttr "place2dTexture7.wv" "DungeonBrickWall_openPBR_shader1_Normal_2.wv";
+connectAttr "place2dTexture7.re" "DungeonBrickWall_openPBR_shader1_Normal_2.re";
+connectAttr "place2dTexture7.of" "DungeonBrickWall_openPBR_shader1_Normal_2.of";
+connectAttr "place2dTexture7.r" "DungeonBrickWall_openPBR_shader1_Normal_2.ro";
+connectAttr "place2dTexture7.n" "DungeonBrickWall_openPBR_shader1_Normal_2.n";
+connectAttr "place2dTexture7.vt1" "DungeonBrickWall_openPBR_shader1_Normal_2.vt1"
+		;
+connectAttr "place2dTexture7.vt2" "DungeonBrickWall_openPBR_shader1_Normal_2.vt2"
+		;
+connectAttr "place2dTexture7.vt3" "DungeonBrickWall_openPBR_shader1_Normal_2.vt3"
+		;
+connectAttr "place2dTexture7.vc1" "DungeonBrickWall_openPBR_shader1_Normal_2.vc1"
+		;
+connectAttr "place2dTexture7.o" "DungeonBrickWall_openPBR_shader1_Normal_2.uv";
+connectAttr "place2dTexture7.ofs" "DungeonBrickWall_openPBR_shader1_Normal_2.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "DungeonBrickWall_openPBR_shader1_Roughness_1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "DungeonBrickWall_openPBR_shader1_Roughness_1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "DungeonBrickWall_openPBR_shader1_Roughness_1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "DungeonBrickWall_openPBR_shader1_Roughness_1.ws"
+		;
+connectAttr "place2dTexture8.c" "DungeonBrickWall_openPBR_shader1_Roughness_1.c"
+		;
+connectAttr "place2dTexture8.tf" "DungeonBrickWall_openPBR_shader1_Roughness_1.tf"
+		;
+connectAttr "place2dTexture8.rf" "DungeonBrickWall_openPBR_shader1_Roughness_1.rf"
+		;
+connectAttr "place2dTexture8.mu" "DungeonBrickWall_openPBR_shader1_Roughness_1.mu"
+		;
+connectAttr "place2dTexture8.mv" "DungeonBrickWall_openPBR_shader1_Roughness_1.mv"
+		;
+connectAttr "place2dTexture8.s" "DungeonBrickWall_openPBR_shader1_Roughness_1.s"
+		;
+connectAttr "place2dTexture8.wu" "DungeonBrickWall_openPBR_shader1_Roughness_1.wu"
+		;
+connectAttr "place2dTexture8.wv" "DungeonBrickWall_openPBR_shader1_Roughness_1.wv"
+		;
+connectAttr "place2dTexture8.re" "DungeonBrickWall_openPBR_shader1_Roughness_1.re"
+		;
+connectAttr "place2dTexture8.of" "DungeonBrickWall_openPBR_shader1_Roughness_1.of"
+		;
+connectAttr "place2dTexture8.r" "DungeonBrickWall_openPBR_shader1_Roughness_1.ro"
+		;
+connectAttr "place2dTexture8.n" "DungeonBrickWall_openPBR_shader1_Roughness_1.n"
+		;
+connectAttr "place2dTexture8.vt1" "DungeonBrickWall_openPBR_shader1_Roughness_1.vt1"
+		;
+connectAttr "place2dTexture8.vt2" "DungeonBrickWall_openPBR_shader1_Roughness_1.vt2"
+		;
+connectAttr "place2dTexture8.vt3" "DungeonBrickWall_openPBR_shader1_Roughness_1.vt3"
+		;
+connectAttr "place2dTexture8.vc1" "DungeonBrickWall_openPBR_shader1_Roughness_1.vc1"
+		;
+connectAttr "place2dTexture8.o" "DungeonBrickWall_openPBR_shader1_Roughness_1.uv"
+		;
+connectAttr "place2dTexture8.ofs" "DungeonBrickWall_openPBR_shader1_Roughness_1.fs"
+		;
+connectAttr "DungeonBrickWall_openPBR_shader1_Roughness_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "place2dTexture8.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
 connectAttr "aiNormalMap1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "place2dTexture2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "openPBRSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "DungeonBrickWall_openPBR_shader1_Normal_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr "DungeonBrickWallMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
 		;
-connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+connectAttr "place2dTexture4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
 		;
-connectAttr "DungeonBrickWallMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "DungeonBrickWall_openPBR_shader1_Height_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
 		;
-connectAttr "place2dTexture3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+connectAttr "place2dTexture6.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
 		;
-connectAttr "DungeonBrickWall_openPBR_shader1_BaseMap_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+connectAttr "place2dTexture7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "DungeonBrickWall_openPBR_shader1_Normal_2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "DungeonBrickWall_openPBR_shader1_Metallic_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "place2dTexture5.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "DungeonBrickWall_openPBR_shader1_BaseColor_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
 		;
 connectAttr "openPBRSurface1SG.pa" ":renderPartition.st" -na;
 connectAttr "DungeonBrickWallMat.msg" ":defaultShaderList1.s" -na;
-connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture3.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "aiNormalMap1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture4.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture5.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture6.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture7.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture8.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "aiAreaLightShape1.ltd" ":lightList1.l" -na;
-connectAttr "DungeonBrickWall_openPBR_shader1_MaskMap_1.msg" ":defaultTextureList1.tx"
+connectAttr "DungeonBrickWall_openPBR_shader1_BaseColor_1.msg" ":defaultTextureList1.tx"
 		 -na;
-connectAttr "DungeonBrickWall_openPBR_shader1_Normal_1.msg" ":defaultTextureList1.tx"
+connectAttr "DungeonBrickWall_openPBR_shader1_Height_1.msg" ":defaultTextureList1.tx"
 		 -na;
-connectAttr "DungeonBrickWall_openPBR_shader1_BaseMap_1.msg" ":defaultTextureList1.tx"
+connectAttr "DungeonBrickWall_openPBR_shader1_Metallic_1.msg" ":defaultTextureList1.tx"
+		 -na;
+connectAttr "DungeonBrickWall_openPBR_shader1_Normal_2.msg" ":defaultTextureList1.tx"
+		 -na;
+connectAttr "DungeonBrickWall_openPBR_shader1_Roughness_1.msg" ":defaultTextureList1.tx"
 		 -na;
 connectAttr "aiAreaLight1.iog" ":defaultLightSet.dsm" -na;
 // End of DungeonBrickWall.ma
