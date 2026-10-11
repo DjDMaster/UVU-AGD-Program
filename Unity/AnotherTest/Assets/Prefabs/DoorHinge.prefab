@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TriggerDoorController
   myDoor: {fileID: 2501968293924055599}
   doorSpeed: 1
-  cardManager: {fileID: 0}
+  cardManager: {fileID: 5895299066579379778, guid: 7fa37a79397d5354a9310442ba76e265, type: 3}
 --- !u!1001 &53466574616616714
 PrefabInstance:
   m_ObjectHideFlags: 0

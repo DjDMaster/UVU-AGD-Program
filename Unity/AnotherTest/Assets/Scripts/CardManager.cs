@@ -66,6 +66,8 @@ public class CardManager : MonoBehaviour
                     " | Unique: " + deck[i].isUnique
                 );
             }
+
+            ShowCardSelection();
         }
 
         // Remove null cards
@@ -119,5 +121,27 @@ public class CardManager : MonoBehaviour
         Debug.Log("Selected: " + selectedCard.cardText);
         // Generate three new cards
         RandomizeNewCards();
+        HideCardSelection();
+
+        // Instantiate the room prefab stored in the selected card
+            if (selectedCard.room != null)
+            {
+                Instantiate(selectedCard.room, Vector3.zero, Quaternion.identity);
+            }
+            else
+            {
+                Debug.LogWarning("No Room prefab assigned to " + selectedCard.cardText);
+            }       
+
+    }
+
+    public void ShowCardSelection()
+    {
+        cardSelectionUI.SetActive(true);
+    }
+
+    public void HideCardSelection()
+    {
+        cardSelectionUI.SetActive(false);
     }
 }

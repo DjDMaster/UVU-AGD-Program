@@ -15,6 +15,8 @@ public class CardSO : ScriptableObject
 
     public int unlockLevel; //Level it needs to be unlocked
 
+    public GameObject room;
+
 }
 
 public enum roomShape
@@ -33,3 +35,4 @@ public enum roomType
 {
     Normal, Enemy, Treasure, Boss, Entrance, Exit
 }
+

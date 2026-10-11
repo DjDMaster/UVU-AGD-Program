@@ -15,8 +15,9 @@ MonoBehaviour:
   cardImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   cardText: This would spawn a Medium Square
   roomShape: 0
-  roomSize: 1
+  roomSize: 2
   roomType: 0
   effectValue: 0
   isUnique: 0
   unlockLevel: 0
+  room: {fileID: 7314215788793069622, guid: fed80e4f11c007f47a2dd37c79cc59d9, type: 3}

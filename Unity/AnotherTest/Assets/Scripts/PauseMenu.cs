@@ -3,6 +3,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject container;
+    public GameObject UICanvas;
     private bool gameState;
 
     void Start()
@@ -19,6 +20,7 @@ public class PauseMenu : MonoBehaviour
             gameState = !gameState;
 
             container.SetActive(gameState);
+            UICanvas.SetActive(!gameState);
             Time.timeScale = gameState ? 0f : 1f;
         }
     }

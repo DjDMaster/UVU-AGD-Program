@@ -17,6 +17,8 @@ public class TriggerDoorController : MonoBehaviour
 
         // Pause the animation. We'll control it manually.
         myDoor.speed = 0f;
+
+        cardsGenerated = false;
     }
 
     private void Update()

@@ -20,3 +20,4 @@ MonoBehaviour:
   effectValue: 0
   isUnique: 0
   unlockLevel: 0
+  room: {fileID: 7314215788793069622, guid: 14ce1a1e6cb9c05449fcb490f567719a, type: 3}

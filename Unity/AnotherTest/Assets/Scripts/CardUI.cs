@@ -43,7 +43,7 @@ public class CardUI : MonoBehaviour
         cardText.text = card.cardText;
     }
 
-    public void SelectCard()
+    void OnMouseDown()
     {
         cardManager.SelectCard(cardData);
     }

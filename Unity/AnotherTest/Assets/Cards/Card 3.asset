@@ -16,7 +16,8 @@ MonoBehaviour:
   cardText: This would spawn a Small Corner
   roomShape: 3
   roomSize: 0
-  roomType: 5
+  roomType: 0
   effectValue: 0
   isUnique: 0
   unlockLevel: 0
+  room: {fileID: 7314215788793069622, guid: 4726658b79993fc48a08da91f177844d, type: 3}
