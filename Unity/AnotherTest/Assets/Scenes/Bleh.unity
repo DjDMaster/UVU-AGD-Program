@@ -564,10 +564,10 @@ MonoBehaviour:
   cardPositionTwo: {fileID: 1775031855}
   cardPositionThree: {fileID: 1631493838}
   deck:
-  - {fileID: 11400000, guid: fdb3539f31c0cf54893f5096516ba19f, type: 2}
   - {fileID: 11400000, guid: 0164237cb885dfc44a679418ab953d07, type: 2}
   - {fileID: 11400000, guid: 3b0c3658d63e61d4b8829969cc8d11c8, type: 2}
   - {fileID: 11400000, guid: 00ed1b71a1db5b34e944e5a84b030fc8, type: 2}
+  - {fileID: 11400000, guid: fdb3539f31c0cf54893f5096516ba19f, type: 2}
 --- !u!4 &400065813
 Transform:
   m_ObjectHideFlags: 0
@@ -717,7 +717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &513994416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0b52293f2ca304699ea10e71a8bd5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonGenerator
-  size: {x: 3, y: 3}
+  size: {x: 5, y: 5}
   startPos: 0
   rooms:
   - room: {fileID: 5852298330495619281, guid: d911f93da9096a242863957388b0f7a3, type: 3}
@@ -781,7 +781,7 @@ Transform:
   m_GameObject: {fileID: 522390480}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000004133619, y: 0.99033433, z: -0.13870122, w: -0.000000029514267}
-  m_LocalPosition: {x: -1.7999991, y: 13.955833, z: 9.532824}
+  m_LocalPosition: {x: -1.7999994, y: 13.13167, z: 6.648251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1965,8 +1965,8 @@ Transform:
   m_GameObject: {fileID: 1338214728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 12, z: 2}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -1, y: 12, z: -1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 621762056}
@@ -2588,7 +2588,7 @@ Transform:
   m_GameObject: {fileID: 1742044595}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000004133619, y: 0.99033433, z: -0.13870122, w: -0.000000029514267}
-  m_LocalPosition: {x: -1.7999991, y: 13.955833, z: 9.532824}
+  m_LocalPosition: {x: -1.7999994, y: 13.13167, z: 6.648251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3559,6 +3559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileStart
       objectReference: {fileID: 0}
+    - target: {fileID: 2079681249286195726, guid: 5856303bdb5595744973576a9d80150c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4418871582869315321, guid: 5856303bdb5595744973576a9d80150c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3655,7 +3659,7 @@ PrefabInstance:
     - target: {fileID: 5049959407397039984, guid: d40d9cd903cb78f41a0eae0154dc55a9, type: 3}
       propertyPath: cardManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 400065812}
     - target: {fileID: 5852298330495619281, guid: d40d9cd903cb78f41a0eae0154dc55a9, type: 3}
       propertyPath: m_Name
       value: TileStart
