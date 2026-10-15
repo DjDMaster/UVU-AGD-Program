@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: DungeonSquareTile.ma
-//Last modified: Thu, Oct 08, 2026 12:22:57 PM
+//Last modified: Wed, Oct 14, 2026 10:31:28 PM
 //Codeset: 1252
 requires maya "2026";
 requires "stereoCamera" "10.0";
@@ -12,7 +12,7 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "7F17E6C7-44C2-AE0D-673B-74872C160ACD";
+fileInfo "UUID" "EA961A07-48D0-FC11-C2E6-C6B61C065638";
 createNode transform -n "DungeonFloorSquare";
 	rename -uid "CA2C0078-4A11-8CEB-0EC8-9DB55BE597ED";
 	setAttr ".rp" -type "double3" 0.13384640216827393 -0.84345726668834686 -0.15900599956512451 ;
@@ -16947,13 +16947,13 @@ createNode mesh -n "GameTiles4:StoneTileTinyA2Shape" -p "GameTiles4:StoneTileTin
 createNode transform -s -n "persp";
 	rename -uid "F7370780-4673-DC79-9527-9BB90C3A4E43";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1.2717759284936694 2.6828800928017142 -0.99754560783479118 ;
-	setAttr ".r" -type "double3" -22.538352729589302 -76.199999999999847 6.6668942666370045e-15 ;
+	setAttr ".t" -type "double3" 0.83306250834526741 1.3707203283299361 13.866343247982932 ;
+	setAttr ".r" -type "double3" 2.6616472704091327 2.599999999999191 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9D5C2246-47C6-D8C5-F99C-CCAFC6E37DBE";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1.57654455091889;
+	setAttr ".coi" 15.2433451166031;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -17040,20 +17040,20 @@ createNode file -n "GameStoneTileSquare_openPBR_shader1_Normal_1";
 createNode place2dTexture -n "place2dTexture6";
 	rename -uid "339224F8-45C6-D5AC-E779-F5A0C9982D0A";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "DBC18004-4A5B-8996-863A-D8AEE1A6A4BF";
+	rename -uid "9D1BE6E0-47AB-B731-94F1-FA8742FA4164";
 	setAttr -s 4 ".lnk";
 	setAttr -s 4 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "4C33336C-4542-2675-4FF1-98A09F27C883";
+	rename -uid "B1C9095E-4052-C7F4-C83B-6F8FA09BAC98";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "1596942A-4FE2-BD80-8E29-328380BC16D3";
+	rename -uid "E383B740-4D4B-48A9-891A-469CD3D94FD0";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "81F9D7EA-4D86-2373-91CF-6D832F36484E";
+	rename -uid "C3A58AB4-413B-D539-6341-78B3FDFF77C0";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "5CA60748-4549-53AE-AF25-B587CCEDB865";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "CC189644-4D34-8484-9F85-38B0F518AC8C";
+	rename -uid "4C6D3595-41F0-0526-2269-0D87BEF6B669";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "4F30243D-4FFD-B18B-4B6D-62BE26D9E0AA";
 	setAttr ".g" yes;
@@ -17073,7 +17073,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
 		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 460\n            -height 1144\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1904\n            -height 1159\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n"
@@ -17101,8 +17101,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
 		+ "                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -excludeObjectPreset \"All\" \n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n"
 		+ "\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 460\\n    -height 1144\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 460\\n    -height 1144\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1904\\n    -height 1159\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1904\\n    -height 1159\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -17118,54 +17118,6 @@ createNode shadingEngine -n "openPBRSurface2SG";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo27";
 	rename -uid "FB66C34B-41AC-1C8A-B081-228689184F3E";
-createNode file -n "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2";
-	rename -uid "A7AF6CE6-404D-414B-0449-2FAF31FF44CA";
-	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "place2dTexture9";
-	rename -uid "E7FA0FAD-443D-0321-C994-FA9F180DA27E";
-createNode file -n "GameStoneTileSquare_openPBR_shader1_BaseMap_2";
-	rename -uid "09BBB03D-4176-4F73-15CD-7C9D82FD8BFE";
-	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_BaseMap.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "place2dTexture10";
-	rename -uid "A70386F6-4243-A282-1865-DDA50DC1515C";
-createNode file -n "GameStoneTileSquare_openPBR_shader1_Height_Raw_1";
-	rename -uid "B1202BE7-43B4-11B1-6FBD-BA8C8C6D8383";
-	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_Height_Raw.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "place2dTexture11";
-	rename -uid "0CA628E5-444A-DDC6-4EE7-0B89A67B2C41";
-createNode file -n "GameStoneTileSquare_openPBR_shader1_MaskMap_1";
-	rename -uid "303EAD32-4EC3-AD30-2659-3C9D0A4FFFFF";
-	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_MaskMap.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "place2dTexture12";
-	rename -uid "CD2FB39B-4F79-2893-37B9-519F84B2BE2A";
-createNode file -n "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1";
-	rename -uid "2096DC98-4465-31EF-0265-0E818CBB0070";
-	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_Metallic_Raw.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "place2dTexture13";
-	rename -uid "E940A5CD-4B91-DE35-C6F1-97835B68E4FD";
-createNode file -n "GameStoneTileSquare_openPBR_shader1_Normal_2";
-	rename -uid "CBA91508-4A70-F9B4-C09A-0983DFB29353";
-	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_Normal.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "place2dTexture14";
-	rename -uid "1AF302CC-46FD-7E27-7E6F-FB835290D790";
-createNode file -n "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1";
-	rename -uid "B64E1E71-47AE-B25A-0436-7DBEDA6348A0";
-	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_Normal_Raw.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "place2dTexture15";
-	rename -uid "D311F770-4F3F-CB0F-3CA0-7BA1B1916E56";
-createNode file -n "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2";
-	rename -uid "35E44C5E-4B5E-7EB0-8684-0E867FB9510A";
-	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_Roughness_Raw.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "place2dTexture16";
-	rename -uid "4FAD9A5D-4219-18B4-6CEC-EE83AC4BE7AA";
 createNode aiNormalMap -n "aiNormalMap2";
 	rename -uid "E520C44C-4225-4926-A4C8-AEB0BD6F758E";
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
@@ -17181,69 +17133,69 @@ createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
 	setAttr ".output_mode" 0;
 createNode aiImagerDenoiserOidn -s -n "defaultArnoldDenoiser";
 	rename -uid "E12A9116-4CF1-2F3E-384D-A8897C02F9FE";
+createNode file -n "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3";
+	rename -uid "6B8376E9-4663-D5E7-E52F-08A60A5EE6B9";
+	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture17";
+	rename -uid "89020089-4C9B-908D-4089-0B902B5D8810";
+createNode file -n "GameStoneTileSquare_openPBR_shader1_Height_Raw_2";
+	rename -uid "F8CA382F-44E2-3813-E1D7-5C954429E2F4";
+	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_Height_Raw.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture18";
+	rename -uid "D50B244D-4384-B840-F594-7990FCDB5439";
+createNode file -n "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2";
+	rename -uid "3E196886-4D9C-18AD-901B-54A644BE7E63";
+	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_Normal_Raw.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture19";
+	rename -uid "DA0712C7-4866-553E-44D5-59A30751D068";
+createNode file -n "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3";
+	rename -uid "0ED49C13-4E04-1939-0612-82A89A4C5165";
+	setAttr ".ftn" -type "string" "C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Textures/GameStoneTileTextures/GameStoneTileSquare_openPBR_shader1_Roughness_Raw.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture20";
+	rename -uid "FE97A453-4356-F961-D225-05BC99165F3D";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "2DB69562-45AE-B885-BCC5-119B0DF13BA8";
+	rename -uid "920EB078-4922-295C-F4F7-36B64113C602";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -304.54959883059826 -369.96063685688114 ;
-	setAttr ".tgi[0].vh" -type "double2" -75.65299473046764 -59.290284116398546 ;
-	setAttr -s 19 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 202.35977172851562;
-	setAttr ".tgi[0].ni[0].y" 600.54547119140625;
+	setAttr ".tgi[0].vl" -type "double2" -2434.516827579223 -980.71446809481984 ;
+	setAttr ".tgi[0].vh" -type "double2" 1472.0042982683767 264.52357766196116 ;
+	setAttr -s 11 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -929.83538818359375;
+	setAttr ".tgi[0].ni[0].y" -886.892578125;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" -19.068805694580078;
-	setAttr ".tgi[0].ni[1].y" 600.54547119140625;
+	setAttr ".tgi[0].ni[1].x" -708.40679931640625;
+	setAttr ".tgi[0].ni[1].y" -886.892578125;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
-	setAttr ".tgi[0].ni[2].x" -17.412239074707031;
-	setAttr ".tgi[0].ni[2].y" 443.9871826171875;
+	setAttr ".tgi[0].ni[2].x" -686.14080810546875;
+	setAttr ".tgi[0].ni[2].y" -76.200355529785156;
 	setAttr ".tgi[0].ni[2].nvs" 1923;
-	setAttr ".tgi[0].ni[3].x" -464.66952514648438;
-	setAttr ".tgi[0].ni[3].y" 175.6015625;
+	setAttr ".tgi[0].ni[3].x" -1017.3665771484375;
+	setAttr ".tgi[0].ni[3].y" -446.39520263671875;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
-	setAttr ".tgi[0].ni[4].x" -708.5806884765625;
-	setAttr ".tgi[0].ni[4].y" -253.32601928710938;
+	setAttr ".tgi[0].ni[4].x" -907.56939697265625;
+	setAttr ".tgi[0].ni[4].y" -76.200355529785156;
 	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" 204.01632690429688;
-	setAttr ".tgi[0].ni[5].y" 443.9871826171875;
-	setAttr ".tgi[0].ni[5].nvs" 1923;
-	setAttr ".tgi[0].ni[6].x" -686.09808349609375;
-	setAttr ".tgi[0].ni[6].y" 175.6015625;
+	setAttr ".tgi[0].ni[5].x" -219.15289306640625;
+	setAttr ".tgi[0].ni[5].y" -86.204643249511719;
+	setAttr ".tgi[0].ni[5].nvs" 1971;
+	setAttr ".tgi[0].ni[6].x" -471.27279663085938;
+	setAttr ".tgi[0].ni[6].y" -487.518798828125;
 	setAttr ".tgi[0].ni[6].nvs" 1923;
-	setAttr ".tgi[0].ni[7].x" -945.82403564453125;
-	setAttr ".tgi[0].ni[7].y" -228.61543273925781;
+	setAttr ".tgi[0].ni[7].x" -909.43182373046875;
+	setAttr ".tgi[0].ni[7].y" -262.98818969726562;
 	setAttr ".tgi[0].ni[7].nvs" 1923;
-	setAttr ".tgi[0].ni[8].x" -219.15289306640625;
-	setAttr ".tgi[0].ni[8].y" -86.204643249511719;
-	setAttr ".tgi[0].ni[8].nvs" 1971;
-	setAttr ".tgi[0].ni[9].x" 6.5613970756530762;
-	setAttr ".tgi[0].ni[9].y" -86.204643249511719;
+	setAttr ".tgi[0].ni[8].x" -688.0032958984375;
+	setAttr ".tgi[0].ni[8].y" -262.98818969726562;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" -795.93804931640625;
+	setAttr ".tgi[0].ni[9].y" -446.39520263671875;
 	setAttr ".tgi[0].ni[9].nvs" 1923;
-	setAttr ".tgi[0].ni[10].x" -705.9349365234375;
-	setAttr ".tgi[0].ni[10].y" -422.62240600585938;
+	setAttr ".tgi[0].ni[10].x" 6.5613970756530762;
+	setAttr ".tgi[0].ni[10].y" -86.204643249511719;
 	setAttr ".tgi[0].ni[10].nvs" 1923;
-	setAttr ".tgi[0].ni[11].x" -925.43011474609375;
-	setAttr ".tgi[0].ni[11].y" -91.500556945800781;
-	setAttr ".tgi[0].ni[11].nvs" 1923;
-	setAttr ".tgi[0].ni[12].x" -927.363525390625;
-	setAttr ".tgi[0].ni[12].y" -422.62240600585938;
-	setAttr ".tgi[0].ni[12].nvs" 1923;
-	setAttr ".tgi[0].ni[13].x" -704.00152587890625;
-	setAttr ".tgi[0].ni[13].y" -91.500556945800781;
-	setAttr ".tgi[0].ni[13].nvs" 1923;
-	setAttr ".tgi[0].ni[14].x" -14.016805648803711;
-	setAttr ".tgi[0].ni[14].y" 298.92669677734375;
-	setAttr ".tgi[0].ni[14].nvs" 1923;
-	setAttr ".tgi[0].ni[15].x" 207.41175842285156;
-	setAttr ".tgi[0].ni[15].y" 298.92669677734375;
-	setAttr ".tgi[0].ni[15].nvs" 1923;
-	setAttr ".tgi[0].ni[16].x" -22.869182586669922;
-	setAttr ".tgi[0].ni[16].y" 145.7210693359375;
-	setAttr ".tgi[0].ni[16].nvs" 1923;
-	setAttr ".tgi[0].ni[17].x" 198.55938720703125;
-	setAttr ".tgi[0].ni[17].y" 145.7210693359375;
-	setAttr ".tgi[0].ni[17].nvs" 1923;
-	setAttr ".tgi[0].ni[18].x" -471.27279663085938;
-	setAttr ".tgi[0].ni[18].y" -487.518798828125;
-	setAttr ".tgi[0].ni[18].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -17257,10 +17209,10 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 14 ".u";
+	setAttr -s 10 ".u";
 select -ne :defaultRenderingList1;
 select -ne :defaultTextureList1;
-	setAttr -s 12 ".tx";
+	setAttr -s 8 ".tx";
 select -ne :lambert1;
 	setAttr ".c" -type "float3" 0.096916303 0.096916303 0.096916303 ;
 select -ne :standardSurface1;
@@ -17485,11 +17437,11 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 relationship "shadowLink" ":lightLinker1" "openPBRSurface2SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
-connectAttr "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.oc" "DungeonFloorMat.bc"
-		;
-connectAttr "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.oa" "DungeonFloorMat.m"
+connectAttr "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.oc" "DungeonFloorMat.bc"
 		;
 connectAttr "aiNormalMap2.out" "DungeonFloorMat.n";
+connectAttr "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.oa" "DungeonFloorMat.sr"
+		;
 connectAttr "DungeonFloorMat.oc" "openPBRSurface2SG.ss";
 connectAttr "GameTiles3:StoneTileTinyA2Shape.iog" "openPBRSurface2SG.dsm" -na;
 connectAttr "GameTiles1:StoneTileAShape.iog" "openPBRSurface2SG.dsm" -na;
@@ -17518,361 +17470,9 @@ connectAttr "GameTiles2:StoneTileBShape.iog" "openPBRSurface2SG.dsm" -na;
 connectAttr "GameTiles4:StoneTileCShape.iog" "openPBRSurface2SG.dsm" -na;
 connectAttr "openPBRSurface2SG.msg" "materialInfo27.sg";
 connectAttr "DungeonFloorMat.msg" "materialInfo27.m";
-connectAttr "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.msg" "materialInfo27.t"
+connectAttr "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.msg" "materialInfo27.t"
 		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.ws"
-		;
-connectAttr "place2dTexture9.c" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.c"
-		;
-connectAttr "place2dTexture9.tf" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.tf"
-		;
-connectAttr "place2dTexture9.rf" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.rf"
-		;
-connectAttr "place2dTexture9.mu" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.mu"
-		;
-connectAttr "place2dTexture9.mv" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.mv"
-		;
-connectAttr "place2dTexture9.s" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.s"
-		;
-connectAttr "place2dTexture9.wu" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.wu"
-		;
-connectAttr "place2dTexture9.wv" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.wv"
-		;
-connectAttr "place2dTexture9.re" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.re"
-		;
-connectAttr "place2dTexture9.of" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.of"
-		;
-connectAttr "place2dTexture9.r" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.ro"
-		;
-connectAttr "place2dTexture9.n" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.n"
-		;
-connectAttr "place2dTexture9.vt1" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.vt1"
-		;
-connectAttr "place2dTexture9.vt2" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.vt2"
-		;
-connectAttr "place2dTexture9.vt3" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.vt3"
-		;
-connectAttr "place2dTexture9.vc1" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.vc1"
-		;
-connectAttr "place2dTexture9.o" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.uv"
-		;
-connectAttr "place2dTexture9.ofs" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.ws"
-		;
-connectAttr "place2dTexture10.c" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.c"
-		;
-connectAttr "place2dTexture10.tf" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.tf"
-		;
-connectAttr "place2dTexture10.rf" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.rf"
-		;
-connectAttr "place2dTexture10.mu" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.mu"
-		;
-connectAttr "place2dTexture10.mv" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.mv"
-		;
-connectAttr "place2dTexture10.s" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.s"
-		;
-connectAttr "place2dTexture10.wu" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.wu"
-		;
-connectAttr "place2dTexture10.wv" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.wv"
-		;
-connectAttr "place2dTexture10.re" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.re"
-		;
-connectAttr "place2dTexture10.of" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.of"
-		;
-connectAttr "place2dTexture10.r" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.ro"
-		;
-connectAttr "place2dTexture10.n" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.n"
-		;
-connectAttr "place2dTexture10.vt1" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.vt1"
-		;
-connectAttr "place2dTexture10.vt2" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.vt2"
-		;
-connectAttr "place2dTexture10.vt3" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.vt3"
-		;
-connectAttr "place2dTexture10.vc1" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.vc1"
-		;
-connectAttr "place2dTexture10.o" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.uv"
-		;
-connectAttr "place2dTexture10.ofs" "GameStoneTileSquare_openPBR_shader1_BaseMap_2.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.ws"
-		;
-connectAttr "place2dTexture11.c" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.c"
-		;
-connectAttr "place2dTexture11.tf" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.tf"
-		;
-connectAttr "place2dTexture11.rf" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.rf"
-		;
-connectAttr "place2dTexture11.mu" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.mu"
-		;
-connectAttr "place2dTexture11.mv" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.mv"
-		;
-connectAttr "place2dTexture11.s" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.s"
-		;
-connectAttr "place2dTexture11.wu" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.wu"
-		;
-connectAttr "place2dTexture11.wv" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.wv"
-		;
-connectAttr "place2dTexture11.re" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.re"
-		;
-connectAttr "place2dTexture11.of" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.of"
-		;
-connectAttr "place2dTexture11.r" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.ro"
-		;
-connectAttr "place2dTexture11.n" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.n"
-		;
-connectAttr "place2dTexture11.vt1" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.vt1"
-		;
-connectAttr "place2dTexture11.vt2" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.vt2"
-		;
-connectAttr "place2dTexture11.vt3" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.vt3"
-		;
-connectAttr "place2dTexture11.vc1" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.vc1"
-		;
-connectAttr "place2dTexture11.o" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.uv"
-		;
-connectAttr "place2dTexture11.ofs" "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.ws"
-		;
-connectAttr "place2dTexture12.c" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.c"
-		;
-connectAttr "place2dTexture12.tf" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.tf"
-		;
-connectAttr "place2dTexture12.rf" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.rf"
-		;
-connectAttr "place2dTexture12.mu" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.mu"
-		;
-connectAttr "place2dTexture12.mv" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.mv"
-		;
-connectAttr "place2dTexture12.s" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.s"
-		;
-connectAttr "place2dTexture12.wu" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.wu"
-		;
-connectAttr "place2dTexture12.wv" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.wv"
-		;
-connectAttr "place2dTexture12.re" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.re"
-		;
-connectAttr "place2dTexture12.of" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.of"
-		;
-connectAttr "place2dTexture12.r" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.ro"
-		;
-connectAttr "place2dTexture12.n" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.n"
-		;
-connectAttr "place2dTexture12.vt1" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.vt1"
-		;
-connectAttr "place2dTexture12.vt2" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.vt2"
-		;
-connectAttr "place2dTexture12.vt3" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.vt3"
-		;
-connectAttr "place2dTexture12.vc1" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.vc1"
-		;
-connectAttr "place2dTexture12.o" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.uv"
-		;
-connectAttr "place2dTexture12.ofs" "GameStoneTileSquare_openPBR_shader1_MaskMap_1.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.ws"
-		;
-connectAttr "place2dTexture13.c" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.c"
-		;
-connectAttr "place2dTexture13.tf" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.tf"
-		;
-connectAttr "place2dTexture13.rf" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.rf"
-		;
-connectAttr "place2dTexture13.mu" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.mu"
-		;
-connectAttr "place2dTexture13.mv" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.mv"
-		;
-connectAttr "place2dTexture13.s" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.s"
-		;
-connectAttr "place2dTexture13.wu" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.wu"
-		;
-connectAttr "place2dTexture13.wv" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.wv"
-		;
-connectAttr "place2dTexture13.re" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.re"
-		;
-connectAttr "place2dTexture13.of" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.of"
-		;
-connectAttr "place2dTexture13.r" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.ro"
-		;
-connectAttr "place2dTexture13.n" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.n"
-		;
-connectAttr "place2dTexture13.vt1" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.vt1"
-		;
-connectAttr "place2dTexture13.vt2" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.vt2"
-		;
-connectAttr "place2dTexture13.vt3" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.vt3"
-		;
-connectAttr "place2dTexture13.vc1" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.vc1"
-		;
-connectAttr "place2dTexture13.o" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.uv"
-		;
-connectAttr "place2dTexture13.ofs" "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_Normal_2.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_Normal_2.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_Normal_2.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_Normal_2.ws"
-		;
-connectAttr "place2dTexture14.c" "GameStoneTileSquare_openPBR_shader1_Normal_2.c"
-		;
-connectAttr "place2dTexture14.tf" "GameStoneTileSquare_openPBR_shader1_Normal_2.tf"
-		;
-connectAttr "place2dTexture14.rf" "GameStoneTileSquare_openPBR_shader1_Normal_2.rf"
-		;
-connectAttr "place2dTexture14.mu" "GameStoneTileSquare_openPBR_shader1_Normal_2.mu"
-		;
-connectAttr "place2dTexture14.mv" "GameStoneTileSquare_openPBR_shader1_Normal_2.mv"
-		;
-connectAttr "place2dTexture14.s" "GameStoneTileSquare_openPBR_shader1_Normal_2.s"
-		;
-connectAttr "place2dTexture14.wu" "GameStoneTileSquare_openPBR_shader1_Normal_2.wu"
-		;
-connectAttr "place2dTexture14.wv" "GameStoneTileSquare_openPBR_shader1_Normal_2.wv"
-		;
-connectAttr "place2dTexture14.re" "GameStoneTileSquare_openPBR_shader1_Normal_2.re"
-		;
-connectAttr "place2dTexture14.of" "GameStoneTileSquare_openPBR_shader1_Normal_2.of"
-		;
-connectAttr "place2dTexture14.r" "GameStoneTileSquare_openPBR_shader1_Normal_2.ro"
-		;
-connectAttr "place2dTexture14.n" "GameStoneTileSquare_openPBR_shader1_Normal_2.n"
-		;
-connectAttr "place2dTexture14.vt1" "GameStoneTileSquare_openPBR_shader1_Normal_2.vt1"
-		;
-connectAttr "place2dTexture14.vt2" "GameStoneTileSquare_openPBR_shader1_Normal_2.vt2"
-		;
-connectAttr "place2dTexture14.vt3" "GameStoneTileSquare_openPBR_shader1_Normal_2.vt3"
-		;
-connectAttr "place2dTexture14.vc1" "GameStoneTileSquare_openPBR_shader1_Normal_2.vc1"
-		;
-connectAttr "place2dTexture14.o" "GameStoneTileSquare_openPBR_shader1_Normal_2.uv"
-		;
-connectAttr "place2dTexture14.ofs" "GameStoneTileSquare_openPBR_shader1_Normal_2.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.ws"
-		;
-connectAttr "place2dTexture15.c" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.c"
-		;
-connectAttr "place2dTexture15.tf" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.tf"
-		;
-connectAttr "place2dTexture15.rf" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.rf"
-		;
-connectAttr "place2dTexture15.mu" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.mu"
-		;
-connectAttr "place2dTexture15.mv" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.mv"
-		;
-connectAttr "place2dTexture15.s" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.s"
-		;
-connectAttr "place2dTexture15.wu" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.wu"
-		;
-connectAttr "place2dTexture15.wv" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.wv"
-		;
-connectAttr "place2dTexture15.re" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.re"
-		;
-connectAttr "place2dTexture15.of" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.of"
-		;
-connectAttr "place2dTexture15.r" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.ro"
-		;
-connectAttr "place2dTexture15.n" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.n"
-		;
-connectAttr "place2dTexture15.vt1" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.vt1"
-		;
-connectAttr "place2dTexture15.vt2" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.vt2"
-		;
-connectAttr "place2dTexture15.vt3" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.vt3"
-		;
-connectAttr "place2dTexture15.vc1" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.vc1"
-		;
-connectAttr "place2dTexture15.o" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.uv"
-		;
-connectAttr "place2dTexture15.ofs" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.cme"
-		;
-connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.cmcf"
-		;
-connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.cmcp"
-		;
-connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.ws"
-		;
-connectAttr "place2dTexture16.c" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.c"
-		;
-connectAttr "place2dTexture16.tf" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.tf"
-		;
-connectAttr "place2dTexture16.rf" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.rf"
-		;
-connectAttr "place2dTexture16.mu" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.mu"
-		;
-connectAttr "place2dTexture16.mv" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.mv"
-		;
-connectAttr "place2dTexture16.s" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.s"
-		;
-connectAttr "place2dTexture16.wu" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.wu"
-		;
-connectAttr "place2dTexture16.wv" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.wv"
-		;
-connectAttr "place2dTexture16.re" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.re"
-		;
-connectAttr "place2dTexture16.of" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.of"
-		;
-connectAttr "place2dTexture16.r" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.ro"
-		;
-connectAttr "place2dTexture16.n" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.n"
-		;
-connectAttr "place2dTexture16.vt1" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.vt1"
-		;
-connectAttr "place2dTexture16.vt2" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.vt2"
-		;
-connectAttr "place2dTexture16.vt3" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.vt3"
-		;
-connectAttr "place2dTexture16.vc1" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.vc1"
-		;
-connectAttr "place2dTexture16.o" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.uv"
-		;
-connectAttr "place2dTexture16.ofs" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.fs"
-		;
-connectAttr "GameStoneTileSquare_openPBR_shader1_BaseMap_2.oc" "aiNormalMap2.input"
+connectAttr "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.oc" "aiNormalMap2.input"
 		;
 connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
 		;
@@ -17880,43 +17480,203 @@ connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drive
 		 -na;
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
-connectAttr "GameStoneTileSquare_openPBR_shader1_Normal_2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.cme"
 		;
-connectAttr "place2dTexture14.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.cmcf"
 		;
-connectAttr "place2dTexture13.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.cmcp"
 		;
-connectAttr "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.ws"
 		;
-connectAttr "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr "place2dTexture17.c" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.c"
 		;
-connectAttr "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+connectAttr "place2dTexture17.tf" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.tf"
 		;
-connectAttr "place2dTexture15.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "place2dTexture17.rf" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.rf"
 		;
-connectAttr "place2dTexture16.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+connectAttr "place2dTexture17.mu" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.mu"
 		;
-connectAttr "DungeonFloorMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+connectAttr "place2dTexture17.mv" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.mv"
 		;
-connectAttr "openPBRSurface2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+connectAttr "place2dTexture17.s" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.s"
 		;
-connectAttr "GameStoneTileSquare_openPBR_shader1_BaseMap_2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+connectAttr "place2dTexture17.wu" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.wu"
 		;
-connectAttr "place2dTexture9.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+connectAttr "place2dTexture17.wv" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.wv"
 		;
-connectAttr "place2dTexture10.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+connectAttr "place2dTexture17.re" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.re"
 		;
-connectAttr "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+connectAttr "place2dTexture17.of" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.of"
 		;
-connectAttr "place2dTexture11.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+connectAttr "place2dTexture17.r" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.ro"
 		;
-connectAttr "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+connectAttr "place2dTexture17.n" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.n"
 		;
-connectAttr "place2dTexture12.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+connectAttr "place2dTexture17.vt1" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.vt1"
 		;
-connectAttr "GameStoneTileSquare_openPBR_shader1_MaskMap_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+connectAttr "place2dTexture17.vt2" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.vt2"
 		;
-connectAttr "aiNormalMap2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
+connectAttr "place2dTexture17.vt3" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.vt3"
+		;
+connectAttr "place2dTexture17.vc1" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.vc1"
+		;
+connectAttr "place2dTexture17.o" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.uv"
+		;
+connectAttr "place2dTexture17.ofs" "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.ws"
+		;
+connectAttr "place2dTexture18.c" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.c"
+		;
+connectAttr "place2dTexture18.tf" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.tf"
+		;
+connectAttr "place2dTexture18.rf" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.rf"
+		;
+connectAttr "place2dTexture18.mu" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.mu"
+		;
+connectAttr "place2dTexture18.mv" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.mv"
+		;
+connectAttr "place2dTexture18.s" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.s"
+		;
+connectAttr "place2dTexture18.wu" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.wu"
+		;
+connectAttr "place2dTexture18.wv" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.wv"
+		;
+connectAttr "place2dTexture18.re" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.re"
+		;
+connectAttr "place2dTexture18.of" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.of"
+		;
+connectAttr "place2dTexture18.r" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.ro"
+		;
+connectAttr "place2dTexture18.n" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.n"
+		;
+connectAttr "place2dTexture18.vt1" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.vt1"
+		;
+connectAttr "place2dTexture18.vt2" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.vt2"
+		;
+connectAttr "place2dTexture18.vt3" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.vt3"
+		;
+connectAttr "place2dTexture18.vc1" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.vc1"
+		;
+connectAttr "place2dTexture18.o" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.uv"
+		;
+connectAttr "place2dTexture18.ofs" "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.ws"
+		;
+connectAttr "place2dTexture19.c" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.c"
+		;
+connectAttr "place2dTexture19.tf" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.tf"
+		;
+connectAttr "place2dTexture19.rf" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.rf"
+		;
+connectAttr "place2dTexture19.mu" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.mu"
+		;
+connectAttr "place2dTexture19.mv" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.mv"
+		;
+connectAttr "place2dTexture19.s" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.s"
+		;
+connectAttr "place2dTexture19.wu" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.wu"
+		;
+connectAttr "place2dTexture19.wv" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.wv"
+		;
+connectAttr "place2dTexture19.re" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.re"
+		;
+connectAttr "place2dTexture19.of" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.of"
+		;
+connectAttr "place2dTexture19.r" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.ro"
+		;
+connectAttr "place2dTexture19.n" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.n"
+		;
+connectAttr "place2dTexture19.vt1" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.vt1"
+		;
+connectAttr "place2dTexture19.vt2" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.vt2"
+		;
+connectAttr "place2dTexture19.vt3" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.vt3"
+		;
+connectAttr "place2dTexture19.vc1" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.vc1"
+		;
+connectAttr "place2dTexture19.o" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.uv"
+		;
+connectAttr "place2dTexture19.ofs" "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.ws"
+		;
+connectAttr "place2dTexture20.c" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.c"
+		;
+connectAttr "place2dTexture20.tf" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.tf"
+		;
+connectAttr "place2dTexture20.rf" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.rf"
+		;
+connectAttr "place2dTexture20.mu" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.mu"
+		;
+connectAttr "place2dTexture20.mv" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.mv"
+		;
+connectAttr "place2dTexture20.s" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.s"
+		;
+connectAttr "place2dTexture20.wu" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.wu"
+		;
+connectAttr "place2dTexture20.wv" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.wv"
+		;
+connectAttr "place2dTexture20.re" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.re"
+		;
+connectAttr "place2dTexture20.of" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.of"
+		;
+connectAttr "place2dTexture20.r" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.ro"
+		;
+connectAttr "place2dTexture20.n" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.n"
+		;
+connectAttr "place2dTexture20.vt1" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.vt1"
+		;
+connectAttr "place2dTexture20.vt2" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.vt2"
+		;
+connectAttr "place2dTexture20.vt3" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.vt3"
+		;
+connectAttr "place2dTexture20.vc1" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.vc1"
+		;
+connectAttr "place2dTexture20.o" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.uv"
+		;
+connectAttr "place2dTexture20.ofs" "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.fs"
+		;
+connectAttr "place2dTexture18.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "place2dTexture19.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "place2dTexture17.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "DungeonFloorMat.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "aiNormalMap2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "place2dTexture20.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "openPBRSurface2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
 		;
 connectAttr "openPBRSurface1SG.pa" ":renderPartition.st" -na;
 connectAttr "openPBRSurface2SG.pa" ":renderPartition.st" -na;
@@ -17927,15 +17687,11 @@ connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture6.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture8.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "aiNormalMap1.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture9.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture10.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture11.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture12.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture13.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture14.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture15.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "place2dTexture16.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "aiNormalMap2.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture17.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture18.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture19.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture20.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_1.msg" ":defaultTextureList1.tx"
 		 -na;
@@ -17945,20 +17701,12 @@ connectAttr "GameStoneTileSquare_openPBR_shader1_Normal_1.msg" ":defaultTextureL
 		 -na;
 connectAttr "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_1.msg" ":defaultTextureList1.tx"
 		 -na;
-connectAttr "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_2.msg" ":defaultTextureList1.tx"
+connectAttr "GameStoneTileSquare_openPBR_shader1_BaseColor_sRGB_3.msg" ":defaultTextureList1.tx"
 		 -na;
-connectAttr "GameStoneTileSquare_openPBR_shader1_BaseMap_2.msg" ":defaultTextureList1.tx"
+connectAttr "GameStoneTileSquare_openPBR_shader1_Height_Raw_2.msg" ":defaultTextureList1.tx"
 		 -na;
-connectAttr "GameStoneTileSquare_openPBR_shader1_Height_Raw_1.msg" ":defaultTextureList1.tx"
+connectAttr "GameStoneTileSquare_openPBR_shader1_Normal_Raw_2.msg" ":defaultTextureList1.tx"
 		 -na;
-connectAttr "GameStoneTileSquare_openPBR_shader1_MaskMap_1.msg" ":defaultTextureList1.tx"
-		 -na;
-connectAttr "GameStoneTileSquare_openPBR_shader1_Metallic_Raw_1.msg" ":defaultTextureList1.tx"
-		 -na;
-connectAttr "GameStoneTileSquare_openPBR_shader1_Normal_2.msg" ":defaultTextureList1.tx"
-		 -na;
-connectAttr "GameStoneTileSquare_openPBR_shader1_Normal_Raw_1.msg" ":defaultTextureList1.tx"
-		 -na;
-connectAttr "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_2.msg" ":defaultTextureList1.tx"
+connectAttr "GameStoneTileSquare_openPBR_shader1_Roughness_Raw_3.msg" ":defaultTextureList1.tx"
 		 -na;
 // End of DungeonSquareTile.ma
