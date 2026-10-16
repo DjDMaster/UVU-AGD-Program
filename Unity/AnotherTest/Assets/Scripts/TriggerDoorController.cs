@@ -4,11 +4,12 @@ public class TriggerDoorController : MonoBehaviour
 {
     [SerializeField] private Animator myDoor;
     [SerializeField] private float doorSpeed = 1f;
-    [SerializeField] private CardManager cardManager;
 
     private bool playerInside;
     private bool cardsGenerated;
     private float doorPosition = 0f;
+
+    private CardManager Cards;
 
     private void Start()
     {
@@ -47,7 +48,8 @@ public class TriggerDoorController : MonoBehaviour
 
             if (!cardsGenerated)
             {
-                cardManager.RandomizeNewCards();
+                Cards = GameObject.Find("CardManager").GetComponent<CardManager>();
+                Cards.RandomizeNewCards();
                 cardsGenerated = true;
             }
         }
