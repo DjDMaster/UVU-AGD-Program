@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1440
     height: 768
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 416.5
     height: 712
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -328,7 +328,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectEntityId:
     m_rawData: 0
-  m_LastVerticalScrollValue: 919
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -760,7 +760,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 68
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 68
   m_LastProjectPath: C:\Users\djdma\Github\AGD-Program\UVU-AGD-Program\Unity\AnotherTest
   m_LockTracker:
@@ -779,12 +779,16 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 95}
     m_SelectedIDs:
-    - m_rawData: 568105584918822890
+    - m_rawData: 568105584918822784
     m_LastClickedID:
-      m_rawData: 568105584918822890
+      m_rawData: 568105584918822784
     m_ExpandedIDs:
-    - m_rawData: 568105589213752260
+    - m_rawData: 568105589213752308
     - m_rawData: 0
+    - m_rawData: 568105584918822768
+    - m_rawData: 568105584918822770
+    - m_rawData: 568105584918822772
+    - m_rawData: 568105584918822774
     - m_rawData: 568105584918822776
     - m_rawData: 568105584918822778
     - m_rawData: 568105584918822780
@@ -793,11 +797,7 @@ MonoBehaviour:
     - m_rawData: 568105584918822786
     - m_rawData: 568105584918822788
     - m_rawData: 568105584918822790
-    - m_rawData: 568105584918822792
-    - m_rawData: 568105584918822794
-    - m_rawData: 568105584918822796
-    - m_rawData: 568105584918822798
-    - m_rawData: 568105584918822890
+    - m_rawData: 568105584918822882
     - m_rawData: 568105587066273791
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -832,6 +832,10 @@ MonoBehaviour:
       m_rawData: 0
     m_ExpandedIDs:
     - m_rawData: 0
+    - m_rawData: 568105584918822768
+    - m_rawData: 568105584918822770
+    - m_rawData: 568105584918822772
+    - m_rawData: 568105584918822774
     - m_rawData: 568105584918822776
     - m_rawData: 568105584918822778
     - m_rawData: 568105584918822780
@@ -840,10 +844,6 @@ MonoBehaviour:
     - m_rawData: 568105584918822786
     - m_rawData: 568105584918822788
     - m_rawData: 568105584918822790
-    - m_rawData: 568105584918822792
-    - m_rawData: 568105584918822794
-    - m_rawData: 568105584918822796
-    - m_rawData: 568105584918822798
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -872,9 +872,9 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_rawData: 568105584918822998
+    - m_rawData: 568105584918817802
     m_LastClickedEntityId:
-      m_rawData: 568105584918822998
+      m_rawData: 568105584918817802
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_rawData: 0
@@ -910,7 +910,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 14}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 68
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -958,11 +958,28 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_rawData: 568105584918822998
+      - m_rawData: 568105584918817802
       m_LastClickedID:
-        m_rawData: 0
+        m_rawData: 568105584918817802
       m_ExpandedIDs:
-      - m_rawData: 568105589213755958
+      - m_rawData: 568105589213565320
+      - m_rawData: 568105589213581882
+      - m_rawData: 568105589213590522
+      - m_rawData: 568105589213591174
+      - m_rawData: 568105589213591242
+      - m_rawData: 568105589213591730
+      - m_rawData: 568105589213591978
+      - m_rawData: 568105589213592124
+      - m_rawData: 568105589213592744
+      - m_rawData: 568105589213592966
+      - m_rawData: 568105589213593084
+      - m_rawData: 568105589213593446
+      - m_rawData: 568105589213593520
+      - m_rawData: 568105589213593938
+      - m_rawData: 568105589213754810
+      - m_rawData: 568105589213754826
+      - m_rawData: 568105589213754860
+      - m_rawData: 568105589213756006
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1620,9 +1637,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 7.4375, y: -8, z: -17.272667}
+    m_Target: {x: 7.7964644, y: -9.361545, z: -16.723854}
     speed: 2
-    m_Value: {x: 7.4375, y: -8, z: -17.272667}
+    m_Value: {x: 7.7964644, y: -9.361545, z: -16.723854}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1654,7 +1671,7 @@ MonoBehaviour:
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
-      m_OffsetAlongAxis: {x: 0, y: -1, z: 0}
+      m_OffsetAlongAxis: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
@@ -1669,13 +1686,13 @@ MonoBehaviour:
     m_gridOpacity: 0.5
     m_NearestPlaneToHandleMode: 1
   m_Rotation:
-    m_Target: {x: 0.12843333, y: 0.059795257, z: -0.0075281044, w: 0.9899697}
+    m_Target: {x: 0.20461865, y: 0.7545105, z: -0.2754968, w: 0.5596198}
     speed: 2
-    m_Value: {x: -0.12843333, y: -0.059795257, z: 0.0075281044, w: -0.9899696}
+    m_Value: {x: 0.20356093, y: 0.75651765, z: -0.27623075, w: 0.55672306}
   m_Size:
-    m_Target: 31.16542
+    m_Target: 22.911161
     speed: 2
-    m_Value: 29.823368
+    m_Value: 22.893991
   m_Ortho:
     m_Target: 0
     speed: 2
