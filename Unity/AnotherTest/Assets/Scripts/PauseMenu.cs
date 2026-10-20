@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
             gameState = !gameState;
 
             container.SetActive(gameState);
@@ -29,6 +31,7 @@ public class PauseMenu : MonoBehaviour
     {
         gameState = false;
         container.SetActive(false);
+        UICanvas.SetActive(gameState);
         Time.timeScale = 1f;
     }
 
@@ -40,6 +43,6 @@ public class PauseMenu : MonoBehaviour
     public void Exit()
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }

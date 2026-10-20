@@ -39,7 +39,39 @@ Transform:
   - {fileID: 6441521564100790543}
   - {fileID: 4370764970373222026}
   - {fileID: 3372364379806139788}
+  - {fileID: 1270024159640156230}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6979766039987440032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1270024159640156230}
+  m_Layer: 0
+  m_Name: Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1270024159640156230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979766039987440032}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.06864, y: 0, z: 1.79721}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 560057610929228747}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1689000874851824893
 PrefabInstance:
@@ -836,6 +868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorHinge
       objectReference: {fileID: 0}
+    - target: {fileID: 3668908335776742772, guid: 2021f071bac03b0429fcc1847aa13be7, type: 3}
+      propertyPath: nextRoomAnchor
+      value: 
+      objectReference: {fileID: 1270024159640156230}
     - target: {fileID: 5792155131364254055, guid: 2021f071bac03b0429fcc1847aa13be7, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25

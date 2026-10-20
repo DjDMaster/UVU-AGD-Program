@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &798285974584100365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8925790834821355309}
+  m_Layer: 0
+  m_Name: Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8925790834821355309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798285974584100365}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 16.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8354544527428565130}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484023215982007501
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +204,7 @@ Transform:
   - {fileID: 4486670647578595014}
   - {fileID: 6591244529952251449}
   - {fileID: 1493597259047099318}
+  - {fileID: 8925790834821355309}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7328146824838352028
@@ -3501,6 +3533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorHinge
       objectReference: {fileID: 0}
+    - target: {fileID: 3668908335776742772, guid: 2021f071bac03b0429fcc1847aa13be7, type: 3}
+      propertyPath: nextRoomAnchor
+      value: 
+      objectReference: {fileID: 8925790834821355309}
     - target: {fileID: 6499416002508183432, guid: 2021f071bac03b0429fcc1847aa13be7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.75

@@ -35,4 +35,3 @@ public enum roomType
 {
     Normal, Enemy, Treasure, Boss, Entrance, Exit
 }
-

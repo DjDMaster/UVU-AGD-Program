@@ -468,6 +468,7 @@
 "Assets/Scripts/HealthBar.cs"
 "Assets/Scripts/LevelGenerator.cs"
 "Assets/Scripts/LevelGeneratorEditor.cs"
+"Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/PauseMenu.cs"
 "Assets/Scripts/PlayerHealth.cs"
 "Assets/Scripts/PlayerMovement.cs"

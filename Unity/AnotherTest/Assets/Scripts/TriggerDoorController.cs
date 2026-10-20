@@ -5,6 +5,8 @@ public class TriggerDoorController : MonoBehaviour
     [SerializeField] private Animator myDoor;
     [SerializeField] private float doorSpeed = 1f;
 
+    [SerializeField] private Transform nextRoomAnchor;
+
     private bool playerInside;
     private bool cardsGenerated;
     private float doorPosition = 0f;
@@ -13,53 +15,52 @@ public class TriggerDoorController : MonoBehaviour
 
     private void Start()
     {
-        // Make sure the Animator is on the door animation.
         myDoor.Play("DoorOpen", 0, 0f);
-
-        // Pause the animation. We'll control it manually.
         myDoor.speed = 0f;
-
         cardsGenerated = false;
     }
 
     private void Update()
     {
         if (playerInside)
-        {
             doorPosition += doorSpeed * Time.deltaTime;
-        }
         else
-        {
             doorPosition -= doorSpeed * Time.deltaTime;
-        }
 
         doorPosition = Mathf.Clamp01(doorPosition);
 
-        // Move the animation to our current position.
         myDoor.Play("DoorOpen", 0, doorPosition);
         myDoor.speed = 0f;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            playerInside = true;
+        if (!other.CompareTag("Player"))
+            return;
 
-            if (!cardsGenerated)
+        playerInside = true;
+
+        if (!cardsGenerated)
+        {
+            Cards = GameObject.Find("CardManager")
+                .GetComponent<CardManager>();
+
+            if (Cards == null || nextRoomAnchor == null)
             {
-                Cards = GameObject.Find("CardManager").GetComponent<CardManager>();
-                Cards.RandomizeNewCards();
-                cardsGenerated = true;
+                Debug.LogError(
+                    "CardManager or Next Room Anchor is missing!"
+                );
+                return;
             }
+
+            Cards.RandomizeNewCards(nextRoomAnchor);
+            cardsGenerated = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             playerInside = false;
-        }
     }
 }

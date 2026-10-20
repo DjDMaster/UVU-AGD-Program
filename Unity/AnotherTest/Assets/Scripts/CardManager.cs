@@ -12,6 +12,10 @@ public class CardManager : MonoBehaviour
     private GameObject cardTwo;
     private GameObject cardThree;
     private List<CardSO> alreadySelectedCards = new List<CardSO>();
+
+    private GameObject door;
+    [SerializeField] private Transform startingRoomSpawnPoint;
+    private Transform currentRoomAnchor;
     private void Start()
     {
         Debug.Log(
@@ -35,8 +39,12 @@ public class CardManager : MonoBehaviour
 
         return path;
     }        
-   public void RandomizeNewCards()
+    public void RandomizeNewCards(Transform roomAnchor = null)
     {
+        if (roomAnchor != null)
+        {
+            currentRoomAnchor = roomAnchor;
+        }
         // Destroy previous cards
         if (cardOne != null)
             Destroy(cardOne);
@@ -120,18 +128,39 @@ public class CardManager : MonoBehaviour
         // Do whatever the card is supposed to do
         Debug.Log("Selected: " + selectedCard.cardText);
         // Generate three new cards
-        RandomizeNewCards();
+        RandomizeNewCards(currentRoomAnchor);
         HideCardSelection();
 
         // Instantiate the room prefab stored in the selected card
-            if (selectedCard.room != null)
+        if (selectedCard.room != null)
+        {
+            Transform spawnPoint = currentRoomAnchor != null
+                ? currentRoomAnchor
+                : startingRoomSpawnPoint;
+
+            if (spawnPoint != null)
             {
-                Instantiate(selectedCard.room, Vector3.zero, Quaternion.identity);
+                GameObject nextRoom = Instantiate(selectedCard.room, spawnPoint.position,spawnPoint.rotation);
+                Transform dungeonParent = GameObject.Find("Dungeon").transform;
+                nextRoom.transform.SetParent(dungeonParent, true);
+                nextRoom.transform.localScale = spawnPoint.lossyScale *0.3f;
             }
             else
             {
-                Debug.LogWarning("No Room prefab assigned to " + selectedCard.cardText);
-            }       
+                // Fallback for the first room when no anchor exists.
+                Instantiate(
+                    selectedCard.room,
+                    Vector3.zero,
+                    Quaternion.identity
+                );
+            }
+        }
+        else
+        {
+            Debug.LogWarning(
+                "No Room prefab assigned to " + selectedCard.cardText
+            );
+        }
 
     }
 
