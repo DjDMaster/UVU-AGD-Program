@@ -143,7 +143,7 @@ public class CardManager : MonoBehaviour
                 GameObject nextRoom = Instantiate(selectedCard.room, spawnPoint.position,spawnPoint.rotation);
                 Transform dungeonParent = GameObject.Find("Dungeon").transform;
                 nextRoom.transform.SetParent(dungeonParent, true);
-                nextRoom.transform.localScale = spawnPoint.lossyScale *0.3f;
+                nextRoom.transform.localScale = spawnPoint.localScale;
             }
             else
             {

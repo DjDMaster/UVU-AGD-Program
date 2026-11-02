@@ -37,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
         readyToJump = true;
     }
-
     private void Update()
     {
         // ground check
@@ -45,13 +44,18 @@ public class PlayerMovement : MonoBehaviour
 
         MyInput();
         SpeedControl();
-        
+
+        // rotate player to match orientation
+        Quaternion targetRotation = Quaternion.Euler(0f, Orientation.eulerAngles.y, 0f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+
         // handle drag
         if (grounded)
             rb.linearDamping = groundDrag;
         else
-        rb.linearDamping = 0;
+            rb.linearDamping = 0;
     }
+        
 
     private void FixedUpdate()
     {
