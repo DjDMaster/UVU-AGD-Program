@@ -167,10 +167,14 @@ public class CardManager : MonoBehaviour
     public void ShowCardSelection()
     {
         cardSelectionUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void HideCardSelection()
     {
         cardSelectionUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
