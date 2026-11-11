@@ -23,6 +23,16 @@ public class PauseMenu : MonoBehaviour
             container.SetActive(gameState);
             UICanvas.SetActive(!gameState);
             Time.timeScale = gameState ? 0f : 1f;
+            if (gameState == true)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            if (gameState == false)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false; 
+            }
         }
     }
 
