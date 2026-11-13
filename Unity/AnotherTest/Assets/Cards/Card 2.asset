@@ -16,8 +16,8 @@ MonoBehaviour:
   cardText: This would spawn a Massive Rectangle
   roomShape: 2
   roomSize: 2
-  roomType: 0
-  effectValue: 0
+  roomType: 1
+  effectValue: 3
   isUnique: 0
   unlockLevel: 0
   room: {fileID: 7314215788793069622, guid: d3cd88deb27a68a43a7e1c580f686da9, type: 3}

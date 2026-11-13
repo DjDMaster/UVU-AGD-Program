@@ -166,10 +166,12 @@ m_ResolvedPackages:
     - 2.0.13
     - 2.0.14
     - 2.0.15
+    - 2.0.16
     compatible:
     - 2.0.14
     - 2.0.15
-    recommended: 2.0.15
+    - 2.0.16
+    recommended: 2.0.16
     deprecated: []
   dependencies:
   - name: com.unity.modules.ai
@@ -4421,10 +4423,12 @@ m_ResolvedPackages:
     - 2.8.4
     - 2.9.0
     - 2.9.1
+    - 2.9.2
     compatible:
     - 2.9.0
     - 2.9.1
-    recommended: 2.9.1
+    - 2.9.2
+    recommended: 2.9.2
     deprecated: []
   dependencies:
   - name: com.unity.mathematics

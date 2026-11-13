@@ -16,7 +16,7 @@ MonoBehaviour:
   cardText: This would spawn a Small Cross
   roomShape: 1
   roomSize: 0
-  roomType: 4
+  roomType: 0
   effectValue: 0
   isUnique: 0
   unlockLevel: 0

@@ -14,6 +14,9 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
     [Header("Door Collider")]
     [SerializeField] private BoxCollider doorCollider;
 
+    [Header("Door Settings")]
+    [SerializeField] private bool closeWhenPlayerLeaves = true;
+
     private bool playerInside;
     private bool cardsGenerated;
     private bool doorActivated;
@@ -26,13 +29,21 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
 
     private void Start()
     {
+        if (myDoor == null)
+        {
+            Debug.LogError("Door Animator is missing!");
+            return;
+        }
+
+        // Initialize door in closed position
         myDoor.Play(currentDoorAnimation, 0, 0f);
+        myDoor.Update(0f);
         myDoor.speed = 0f;
 
         cardsGenerated = false;
         doorActivated = false;
 
-        // Get the BoxCollider attached to this GameObject
+        // Get BoxCollider
         if (doorCollider == null)
         {
             doorCollider = GetComponent<BoxCollider>();
@@ -46,6 +57,10 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
 
     private void Update()
     {
+        if (myDoor == null)
+            return;
+
+        // Move animation position
         if (doorActivated)
         {
             doorPosition += doorSpeed * Time.deltaTime;
@@ -55,8 +70,10 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
             doorPosition -= doorSpeed * Time.deltaTime;
         }
 
+        // Clamp animation position
         doorPosition = Mathf.Clamp01(doorPosition);
 
+        // Manually control animation
         myDoor.speed = 0f;
         myDoor.Play(currentDoorAnimation, 0, doorPosition);
     }
@@ -66,7 +83,7 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
         if (doorActivated)
             return;
 
-        // Generate the next room before opening.
+        // Generate next room cards only once
         if (!cardsGenerated)
         {
             GameObject cardManagerObject =
@@ -93,7 +110,7 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
             cardsGenerated = true;
         }
 
-        // Determine which side of the door the player is on.
+        // Determine which side of the door the player is on
         Vector3 directionToPlayer =
             Camera.main.transform.position - doorTransform.position;
 
@@ -102,12 +119,14 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
             directionToPlayer
         );
 
-        // Choose the appropriate opening animation.
+        // Select opening animation
         currentDoorAnimation = side < 0
             ? "DoorOpenForward"
             : "DoorOpenBackward";
 
-        // Start opening.
+        // Start opening from the closed position
+        doorPosition = 0f;
+
         doorActivated = true;
     }
 
@@ -126,15 +145,18 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
 
         playerInside = false;
 
-        // Close the door.
-        doorActivated = false;
+        // Close door when player leaves
+        if (closeWhenPlayerLeaves)
+        {
+            doorActivated = false;
+        }
     }
 
     public string DisplayName => "Open Door";
 
     public bool CanInteract()
     {
-        return true;
+        return !doorActivated;
     }
 
     public void OnFocusGained()

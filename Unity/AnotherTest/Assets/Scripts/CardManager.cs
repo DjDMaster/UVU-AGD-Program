@@ -1,50 +1,52 @@
+
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.AI.Navigation;
+
 public class CardManager : MonoBehaviour
 {
+    [Header("Card Selection UI")]
     [SerializeField] private GameObject cardSelectionUI;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private Transform cardPositionOne;
     [SerializeField] private Transform cardPositionTwo;
     [SerializeField] private Transform cardPositionThree;
+
+    [Header("Card Deck")]
     [SerializeField] private List<CardSO> deck;
+    private List<CardSO> alreadySelectedCards = new List<CardSO>();
+
+    [Header("Enemy Spawning")]
+    [SerializeField] private GameObject enemyPrefab;
+
+    [Header("Room Generation")]
+    [SerializeField] private Transform startingRoomSpawnPoint;
+    [SerializeField] private NavMeshSurface surface;
+
     private GameObject cardOne;
     private GameObject cardTwo;
     private GameObject cardThree;
-    private List<CardSO> alreadySelectedCards = new List<CardSO>();
 
-    private GameObject door;
-    [SerializeField] private Transform startingRoomSpawnPoint;
     private Transform currentRoomAnchor;
+
+    private bool isSelectingCard = false;
+
     private void Start()
     {
-        Debug.Log(
-            $"CARD MANAGER STARTED\n" +
-            $"GameObject: {gameObject.name}\n" +
-            $"Path: {GetGameObjectPath(transform)}\n" +
-            $"Scene: {gameObject.scene.name}\n" +
-            $"Deck Size: {deck.Count}"
-        );
+        Debug.Log("CARD MANAGER STARTED");
     }
 
-    private string GetGameObjectPath(Transform current)
-    {
-        string path = current.name;
-
-        while (current.parent != null)
-        {
-            current = current.parent;
-            path = current.name + "/" + path;
-        }
-
-        return path;
-    }        
     public void RandomizeNewCards(Transform roomAnchor = null)
     {
+        // Don't generate another set while processing a selection
+        if (isSelectingCard)
+            return;
+
         if (roomAnchor != null)
         {
             currentRoomAnchor = roomAnchor;
         }
+
         // Destroy previous cards
         if (cardOne != null)
             Destroy(cardOne);
@@ -58,30 +60,10 @@ public class CardManager : MonoBehaviour
         // Copy deck
         List<CardSO> availableCards = new List<CardSO>(deck);
 
-                Debug.Log("Deck list size: " + deck.Count);
-
-        for (int i = 0; i < deck.Count; i++)
-        {
-            if (deck[i] == null)
-            {
-                Debug.LogError("Deck element " + i + " is NULL!");
-            }
-            else
-            {
-                Debug.Log(
-                    "Deck element " + i +
-                    ": " + deck[i].name +
-                    " | Unique: " + deck[i].isUnique
-                );
-            }
-
-            ShowCardSelection();
-        }
-
         // Remove null cards
         availableCards.RemoveAll(card => card == null);
 
-        // Remove unique cards that have already been selected
+        // Remove previously selected unique cards
         availableCards.RemoveAll(card =>
             card.isUnique && alreadySelectedCards.Contains(card)
         );
@@ -89,14 +71,11 @@ public class CardManager : MonoBehaviour
         // Make sure we have at least 3 cards
         if (availableCards.Count < 3)
         {
-            Debug.LogWarning(
-                "Not enough available cards. Available: " +
-                availableCards.Count
-            );
+            Debug.LogWarning("Not enough available cards!");
             return;
         }
 
-        // Pick 3 unique cards
+        // Pick 3 random cards
         List<CardSO> randomizeCards = new List<CardSO>();
 
         for (int i = 0; i < 3; i++)
@@ -116,52 +95,152 @@ public class CardManager : MonoBehaviour
         cardOne.GetComponent<CardUI>().Setup(randomizeCards[0], this);
         cardTwo.GetComponent<CardUI>().Setup(randomizeCards[1], this);
         cardThree.GetComponent<CardUI>().Setup(randomizeCards[2], this);
+
+        ShowCardSelection();
     }
 
-        public void SelectCard(CardSO selectedCard)
+    public void SelectCard(CardSO selectedCard)
     {
-        // Only remember unique cards
+        // Prevent multiple selections
+        if (isSelectingCard)
+            return;
+
+        if (selectedCard == null)
+            return;
+
+        isSelectingCard = true;
+
+        Debug.Log("Selected: " + selectedCard.cardText);
+
+        // Remember unique cards
         if (selectedCard.isUnique)
         {
             alreadySelectedCards.Add(selectedCard);
         }
-        // Do whatever the card is supposed to do
-        Debug.Log("Selected: " + selectedCard.cardText);
-        // Generate three new cards
-        RandomizeNewCards(currentRoomAnchor);
+
+        // Hide selection UI
         HideCardSelection();
 
-        // Instantiate the room prefab stored in the selected card
-        if (selectedCard.room != null)
+        // Spawn selected room
+        if (selectedCard.room == null)
         {
-            Transform spawnPoint = currentRoomAnchor != null
-                ? currentRoomAnchor
-                : startingRoomSpawnPoint;
+            Debug.LogWarning("No Room prefab assigned to " + selectedCard.cardText);
+            isSelectingCard = false;
+            return;
+        }
 
-            if (spawnPoint != null)
+        Transform spawnPoint = currentRoomAnchor != null
+            ? currentRoomAnchor
+            : startingRoomSpawnPoint;
+
+        GameObject nextRoom;
+
+        if (spawnPoint != null)
+        {
+            nextRoom = Instantiate(
+                selectedCard.room,
+                spawnPoint.position,
+                spawnPoint.rotation
+            );
+
+            Transform dungeonParent = GameObject.Find("Dungeon")?.transform;
+
+            if (dungeonParent != null)
             {
-                GameObject nextRoom = Instantiate(selectedCard.room, spawnPoint.position,spawnPoint.rotation);
-                Transform dungeonParent = GameObject.Find("Dungeon").transform;
                 nextRoom.transform.SetParent(dungeonParent, true);
-                nextRoom.transform.localScale = spawnPoint.localScale;
             }
             else
             {
-                // Fallback for the first room when no anchor exists.
-                Instantiate(
-                    selectedCard.room,
-                    Vector3.zero,
-                    Quaternion.identity
-                );
+                Debug.LogWarning("Dungeon parent not found!");
             }
+
+            nextRoom.transform.localScale = spawnPoint.localScale;
         }
         else
         {
-            Debug.LogWarning(
-                "No Room prefab assigned to " + selectedCard.cardText
+            nextRoom = Instantiate(
+                selectedCard.room,
+                Vector3.zero,
+                Quaternion.identity
             );
         }
 
+        // Rebuild NavMesh
+        if (surface != null)
+        {
+            surface.BuildNavMesh();
+        }
+
+        // Find enemy spawn point
+        EnemySpawnPoint enemySpawn =
+            nextRoom.GetComponentInChildren<EnemySpawnPoint>();
+
+        // Handle room type
+        switch (selectedCard.roomType)
+        {
+            case roomType.Normal:
+                Debug.Log("Spawning normal room");
+                break;
+
+            case roomType.Enemy:
+
+                Debug.Log("Spawning enemy room");
+
+                int enemyCount = Mathf.RoundToInt(selectedCard.effectValue);
+
+                if (enemySpawn != null)
+                {
+                    SpawnEnemies(enemyCount, enemySpawn.Anchor);
+                }
+                else
+                {
+                    Debug.LogError("EnemySpawnPoint missing from " + nextRoom.name);
+                }
+
+                break;
+
+            case roomType.Treasure:
+                Debug.Log("Spawning treasure room");
+                break;
+
+            case roomType.Boss:
+                Debug.Log("Spawning boss room");
+                break;
+
+            case roomType.Entrance:
+                Debug.Log("Spawning entrance room");
+                break;
+
+            case roomType.Exit:
+                Debug.Log("Spawning exit room");
+                break;
+        }
+
+        // Selection processing finished.
+        // Wait for the next door to generate new cards.
+        isSelectingCard = false;
+    }
+
+    private void SpawnEnemies(int amount, Transform enemyAnchor)
+    {
+        if (enemyAnchor == null || enemyPrefab == null)
+        {
+            Debug.LogError("Enemy Anchor or Enemy Prefab is missing!");
+            return;
+        }
+
+        for (int i = 0; i < amount; i++)
+        {
+            Vector3 randomPosition = enemyAnchor.position + new Vector3(
+                Random.Range(-5f, 5f),
+                0f,
+                Random.Range(-5f, 5f)
+            );
+
+            Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
+        }
+
+        Debug.Log("Spawned " + amount + " enemies!");
     }
 
     public void ShowCardSelection()
