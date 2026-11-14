@@ -1,4 +1,6 @@
 
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.AI.Navigation;
@@ -31,16 +33,19 @@ public class CardManager : MonoBehaviour
 
     private bool isSelectingCard = false;
 
+    // Notifies the door when room generation finishes
+    public event Action<bool> OnRoomGenerationCompleted;
+
     private void Start()
     {
         Debug.Log("CARD MANAGER STARTED");
     }
 
-    public void RandomizeNewCards(Transform roomAnchor = null)
+    public bool RandomizeNewCards(Transform roomAnchor = null)
     {
         // Don't generate another set while processing a selection
         if (isSelectingCard)
-            return;
+            return false;
 
         if (roomAnchor != null)
         {
@@ -72,7 +77,7 @@ public class CardManager : MonoBehaviour
         if (availableCards.Count < 3)
         {
             Debug.LogWarning("Not enough available cards!");
-            return;
+            return false;
         }
 
         // Pick 3 random cards
@@ -80,7 +85,7 @@ public class CardManager : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            int randomIndex = Random.Range(0, availableCards.Count);
+            int randomIndex = UnityEngine.Random.Range(0, availableCards.Count);
 
             randomizeCards.Add(availableCards[randomIndex]);
             availableCards.RemoveAt(randomIndex);
@@ -97,6 +102,10 @@ public class CardManager : MonoBehaviour
         cardThree.GetComponent<CardUI>().Setup(randomizeCards[2], this);
 
         ShowCardSelection();
+
+        Debug.Log("THREE CARDS GENERATED!");
+
+        return true;
     }
 
     public void SelectCard(CardSO selectedCard)
@@ -125,7 +134,11 @@ public class CardManager : MonoBehaviour
         if (selectedCard.room == null)
         {
             Debug.LogWarning("No Room prefab assigned to " + selectedCard.cardText);
+
             isSelectingCard = false;
+
+            OnRoomGenerationCompleted?.Invoke(false);
+
             return;
         }
 
@@ -216,9 +229,19 @@ public class CardManager : MonoBehaviour
                 break;
         }
 
-        // Selection processing finished.
-        // Wait for the next door to generate new cards.
+        // Wait one frame before notifying the door
+        StartCoroutine(NotifyRoomReady());
+    }
+
+    private IEnumerator NotifyRoomReady()
+    {
+        yield return null;
+
         isSelectingCard = false;
+
+        Debug.Log("ROOM GENERATION COMPLETE!");
+
+        OnRoomGenerationCompleted?.Invoke(true);
     }
 
     private void SpawnEnemies(int amount, Transform enemyAnchor)
@@ -232,9 +255,9 @@ public class CardManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             Vector3 randomPosition = enemyAnchor.position + new Vector3(
-                Random.Range(-5f, 5f),
-                0f,
-                Random.Range(-5f, 5f)
+            UnityEngine.Random.Range(-5f, 5f),
+            0f,
+            UnityEngine.Random.Range(-5f, 5f)
             );
 
             Instantiate(enemyPrefab, randomPosition, Quaternion.identity);

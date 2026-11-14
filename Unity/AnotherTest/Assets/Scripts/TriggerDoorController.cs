@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 
 public class TriggerDoorController : MonoBehaviour, IInteractable
@@ -20,6 +21,13 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
     private bool playerInside;
     private bool cardsGenerated;
     private bool doorActivated;
+
+    private bool isGenerating;
+    private bool roomGenerationFinished;
+    private bool roomGenerationSuccessful;
+
+    // Remembers whether this door has generated cards
+    private bool hasBeenUsed = false;
 
     private float doorPosition = 0f;
 
@@ -43,7 +51,6 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
         cardsGenerated = false;
         doorActivated = false;
 
-        // Get BoxCollider
         if (doorCollider == null)
         {
             doorCollider = GetComponent<BoxCollider>();
@@ -80,35 +87,110 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (doorActivated)
+        // Prevent interaction while generating
+        if (isGenerating)
             return;
 
-        // Generate next room cards only once
+        // If cards have not been generated yet,
+        // generate them before opening the door.
+        if (!hasBeenUsed)
+        {
+            StartCoroutine(GenerateRoomAndOpenDoor());
+            return;
+        }
+
+        // Cards have already been generated.
+        // Simply toggle the door.
+        ToggleDoor();
+    }
+
+    private void ToggleDoor()
+    {
+        // Determine which side of the door the player is on
+        Vector3 directionToPlayer =
+            Camera.main.transform.position - doorTransform.position;
+
+        float side = Vector3.Dot(
+            doorTransform.forward,
+            directionToPlayer
+        );
+
+        // Select opening animation
+        currentDoorAnimation = side < 0
+            ? "DoorOpenForward"
+            : "DoorOpenBackward";
+
+        // Toggle door open/closed
+        doorActivated = !doorActivated;
+    }
+
+    private IEnumerator GenerateRoomAndOpenDoor()
+    {
+        isGenerating = true;
+
+        roomGenerationFinished = false;
+        roomGenerationSuccessful = false;
+
+        GameObject cardManagerObject =
+            GameObject.Find("CardManager");
+
+        if (cardManagerObject == null || nextRoomAnchor == null)
+        {
+            Debug.LogError("CardManager or Next Room Anchor is missing!");
+
+            isGenerating = false;
+            yield break;
+        }
+
+        Cards = cardManagerObject.GetComponent<CardManager>();
+
+        if (Cards == null)
+        {
+            Debug.LogError("CardManager component is missing!");
+
+            isGenerating = false;
+            yield break;
+        }
+
+        // Listen for room generation completion
+        Cards.OnRoomGenerationCompleted += HandleRoomGenerationCompleted;
+
+        // Generate the three cards
+        cardsGenerated = Cards.RandomizeNewCards(nextRoomAnchor);
+
         if (!cardsGenerated)
         {
-            GameObject cardManagerObject =
-                GameObject.Find("CardManager");
+            Cards.OnRoomGenerationCompleted -= HandleRoomGenerationCompleted;
 
-            if (cardManagerObject == null || nextRoomAnchor == null)
-            {
-                Debug.LogError(
-                    "CardManager or Next Room Anchor is missing!"
-                );
-                return;
-            }
+            Debug.LogWarning("Card generation failed. Door remains closed.");
 
-            Cards = cardManagerObject.GetComponent<CardManager>();
-
-            if (Cards == null)
-            {
-                Debug.LogError("CardManager component is missing!");
-                return;
-            }
-
-            Cards.RandomizeNewCards(nextRoomAnchor);
-
-            cardsGenerated = true;
+            isGenerating = false;
+            yield break;
         }
+
+        Debug.Log("Cards generated. Waiting for room selection...");
+
+        // Wait until the player selects a card
+        // and the room finishes spawning
+        while (!roomGenerationFinished)
+        {
+            yield return null;
+        }
+
+        Cards.OnRoomGenerationCompleted -= HandleRoomGenerationCompleted;
+
+        if (!roomGenerationSuccessful)
+        {
+            Debug.LogWarning("Room generation failed. Door remains closed.");
+
+            isGenerating = false;
+            yield break;
+        }
+
+        // Remember that this door has generated its cards
+        hasBeenUsed = true;
+
+        Debug.Log("Room is ready! Opening door.");
 
         // Determine which side of the door the player is on
         Vector3 directionToPlayer =
@@ -124,10 +206,18 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
             ? "DoorOpenForward"
             : "DoorOpenBackward";
 
-        // Start opening from the closed position
+        // Start opening from closed position
         doorPosition = 0f;
 
         doorActivated = true;
+
+        isGenerating = false;
+    }
+
+    private void HandleRoomGenerationCompleted(bool success)
+    {
+        roomGenerationSuccessful = success;
+        roomGenerationFinished = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -152,11 +242,11 @@ public class TriggerDoorController : MonoBehaviour, IInteractable
         }
     }
 
-    public string DisplayName => "Open Door";
+    public string DisplayName => doorActivated ? "Close Door" : "Open Door";
 
     public bool CanInteract()
     {
-        return !doorActivated;
+        return !isGenerating;
     }
 
     public void OnFocusGained()
