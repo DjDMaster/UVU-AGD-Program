@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public LevelLoader levelLoader;
     public void StoryMode()
     {
 
@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
 
     public void Freeplay()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Test");
+        levelLoader.LoadNextLevel();
     }
 
     public void Options()

@@ -1,10 +1,15 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
+    public GameManagerScript gameManager;
+
+    private bool isDead;
 
     
     
@@ -21,6 +26,14 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             TakeDamage(10);
+        }
+
+        if(currentHealth <= 0 && !isDead)
+        {
+            isDead = true;
+            gameManager.gameOver();
+            Debug.Log("Dead");
+            gameObject.SetActive(false);
         }
     }
 
