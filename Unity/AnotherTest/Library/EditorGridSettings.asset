@@ -28,4 +28,4 @@ MonoBehaviour:
       type: {class: CustomGridMode, ns: UnityEditor, asm: UnityEditor.CoreModule}
       data:
         m_Position: {x: 0, y: 0, z: 0}
-        m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+        m_Rotation: {x: -0.00037281914, y: 0.7061395, z: 0.00038441754, w: 0.7080726}
