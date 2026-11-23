@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0f56e16e6c6ae542b54ce28e5ca2602, type: 3}
-  m_Name: Card 3
+  m_Name: Card 2
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   cardImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  cardText: This would spawn a Small Corner
-  roomShape: 3
+  cardText: This would spawn a Small Enemy Cross
+  roomShape: 1
   roomSize: 0
-  roomType: 0
-  effectValue: 0
+  roomType: 1
+  effectValue: 1
   isUnique: 0
   unlockLevel: 0
-  room: {fileID: 7314215788793069622, guid: 4726658b79993fc48a08da91f177844d, type: 3}
+  room: {fileID: 7314215788793069622, guid: c8b95b9bdc71dd44786e66d1dd0c833e, type: 3}

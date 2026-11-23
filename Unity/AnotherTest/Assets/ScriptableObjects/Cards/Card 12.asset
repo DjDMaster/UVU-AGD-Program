@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0f56e16e6c6ae542b54ce28e5ca2602, type: 3}
-  m_Name: Card 1
+  m_Name: Card 12
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   cardImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  cardText: This would spawn a Small Cross
-  roomShape: 1
-  roomSize: 0
-  roomType: 0
-  effectValue: 0
+  cardText: This would spawn a Massive Enemy Rectangle
+  roomShape: 2
+  roomSize: 3
+  roomType: 1
+  effectValue: 5
   isUnique: 0
   unlockLevel: 0
-  room: {fileID: 7314215788793069622, guid: 14ce1a1e6cb9c05449fcb490f567719a, type: 3}
+  room: {fileID: 7314215788793069622, guid: 6734eb6f4ddf1d54980da7fdaff32f5a, type: 3}
