@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639310743761114318
-    m_Hash: 2049407559
+      ticks: 639314421061508409
+    m_Hash: 1277089348
   m_LockFileStatus:
     m_FilePath: C:/Users/djdma/Github/AGD-Program/UVU-AGD-Program/Unity/AnotherTest/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639310743761164687
-    m_Hash: 2522132805
+      ticks: 639314421061518389
+    m_Hash: 2704272236
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
